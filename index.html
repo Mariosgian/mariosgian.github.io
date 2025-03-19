@@ -70,6 +70,7 @@
             transform: translateY(20px);
             animation: fadeIn 0.8s ease-out forwards;
         }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -202,11 +203,15 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Smooth scroll for navigation links
+        // Smooth scroll for navigation links with offset for sticky header
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const offset = 80; // Adjust based on your header height
+                window.scrollTo({
+                    top: targetElement.offsetTop - offset,
                     behavior: 'smooth'
                 });
                 document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
