@@ -289,9 +289,8 @@
      CONTAINER SCROLL — 3D Showcase
   ══════════════════════════════════════ */
   .cs-outer {
-    height: 80rem;
+    height: calc(100vh + 480px);
     position: relative;
-    overflow: hidden;
   }
 
   .cs-sticky {
@@ -396,7 +395,7 @@
   }
 
   @media (max-width: 768px) {
-    .cs-outer { height: 50rem; }
+    .cs-outer { height: calc(100vh + 280px); }
     .cs-card { height: 260px; }
     .gooey-span { font-size: 2rem; }
     .cs-sticky { padding: 24px 16px; }
@@ -510,7 +509,7 @@
         </div>
 
         <!-- ── AnimatedHero Rotating Subtitle ── -->
-        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto">
           building
           <span class="rotating-words-outer">
             <span class="rotating-word word-active gradient-text font-semibold">efficient</span>
@@ -519,7 +518,7 @@
             <span class="rotating-word gradient-text font-semibold">fast</span>
             <span class="rotating-word gradient-text font-semibold">smart</span>
           </span>
-          software &amp; web experiences
+          software &amp; web experiences 
         </p>
 
         <!-- CTAs -->
@@ -801,6 +800,47 @@
     </div>
   </section>
 
+  <!-- What I Build Section -->
+  <section class="py-24 animate-fade-up">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">
+          <span class="gradient-text">What I Build</span>
+        </h2>
+        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-10"></div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+              <i class="fas fa-globe text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Business Websites</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Clean, fast, mobile-friendly sites for local businesses and professionals.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
+              <i class="fas fa-bullseye text-accent"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Landing Pages</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Conversion-focused one-pagers designed to turn visitors into clients.</p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+              <i class="fas fa-user-circle text-primary"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3">Personal Brands</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Portfolio and personal brand sites for creators, freelancers, and founders.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Skills Section -->
   <section id="skills" class="py-24 animate-fade-up">
     <div class="container mx-auto px-6">
@@ -879,7 +919,7 @@
         </h2>
         <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
         <div class="glass-card rounded-2xl p-8 md:p-10">
-          <p class="text-slate-400 mb-8">Feel free to reach out for collaborations, opportunities, or just to say hi!</p>
+          <p class="text-slate-400 mb-8">Have a project in mind? Let's talk.</p>
           <div class="grid sm:grid-cols-2 gap-6">
             <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
               <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
@@ -947,7 +987,7 @@
 //  1. GOOEY TEXT MORPHING
 // ══════════════════════════════════════════════════════════
 (function initGooeyText() {
-  const texts  = ["Developer", "Designer", "Algorithmist", "Builder", "Student"];
+  const texts  = ["Developer", "Designer", "Algorithmist", "Builder"];
   const t1     = document.getElementById('gooey-t1');
   const t2     = document.getElementById('gooey-t2');
   if (!t1 || !t2) return;
