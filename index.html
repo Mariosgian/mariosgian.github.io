@@ -4,23 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Marios Giannoulis | Web Developer & C++ Programmer</title>
+<title>Marios Giannoulis | Web Developer & Software Engineer for Hire</title>
 
-<meta name="description" content="Portfolio of Marios Konstantinos Giannoulis, developer focused on C/C++, algorithms and modern web development.">
-<meta name="keywords" content="Marios Giannoulis, C++, Web Developer, Algorithms, Portfolio">
+<meta name="description" content="Marios Konstantinos Giannoulis builds fast, modern websites for businesses and engineers efficient software in C/C++. Available for freelance projects and tech roles.">
+<meta name="keywords" content="Marios Giannoulis, Web Developer, Software Engineer, C++, Algorithms, Freelance Web Developer, Portfolio, Hire">
 <meta name="author" content="Marios Konstantinos Giannoulis">
 
+<link rel="canonical" href="https://mariosgian.com/">
+<meta name="theme-color" content="#000000">
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mariosgian.github.io/">
-<meta property="og:title" content="Marios Konstantinos Giannoulis | Web Developer & Designer">
-<meta property="og:description" content="Personal website of Marios Konstantinos Giannoulis — building efficient software and modern web experiences.">
-<meta property="og:image" content="https://mariosgian.github.io/images/social-preview.jpg">
+<meta property="og:url" content="https://mariosgian.com/">
+<meta property="og:title" content="Marios Giannoulis | Web Developer & Software Engineer for Hire">
+<meta property="og:description" content="I build fast, modern websites for businesses and engineer efficient software in C/C++. Available for freelance projects and tech roles.">
+<meta property="og:image" content="https://mariosgian.com/images/nexora.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://mariosgian.github.io/">
-<meta name="twitter:title" content="Marios Konstantinos Giannoulis | Web Developer">
-<meta name="twitter:description" content="Developer focused on algorithms, performance and modern web design.">
-<meta name="twitter:image" content="https://mariosgian.github.io/images/social-preview.jpg">
+<meta name="twitter:url" content="https://mariosgian.com/">
+<meta name="twitter:title" content="Marios Giannoulis | Web Developer & Software Engineer">
+<meta name="twitter:description" content="Fast, modern websites for businesses + efficient software in C/C++. Available for hire.">
+<meta name="twitter:image" content="https://mariosgian.com/images/nexora.jpg">
 
 <link rel="icon" href="favicon.png" type="image/png">
 
@@ -38,10 +41,10 @@
       extend: {
         colors: {
           dark: {
-            900: '#0f172a',
-            800: '#1e293b',
-            700: '#334155',
-            600: '#475569',
+            900: '#000000',
+            800: '#0d0d10',
+            700: '#1a1a1f',
+            600: '#2a2a30',
           },
           primary: '#6366f1',
           accent: '#22c55e',
@@ -58,32 +61,39 @@
 <style>
   * {
     scrollbar-width: thin;
-    scrollbar-color: #6366f1 #1e293b;
+    scrollbar-color: #6366f1 #0d0d10;
   }
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #1e293b; }
+  ::-webkit-scrollbar-track { background: #0d0d10; }
   ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #818cf8; }
 
   .glass {
-    background: rgba(30, 41, 59, 0.7);
+    background: rgba(18, 18, 22, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(99, 102, 241, 0.1);
   }
 
   .glass-card {
-    background: rgba(30, 41, 59, 0.5);
+    background: rgba(18, 18, 22, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(99, 102, 241, 0.15);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #6366f1 0%, #22c55e 100%);
+    background: linear-gradient(135deg, #818cf8 0%, #22c55e 50%, #818cf8 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% center; }
+    50%      { background-position: 100% center; }
   }
 
   .gradient-border {
@@ -400,9 +410,115 @@
     .gooey-span { font-size: 2rem; }
     .cs-sticky { padding: 24px 16px; }
   }
+
+  /* ══════════════════════════════════════
+     AVAILABILITY BADGE
+  ══════════════════════════════════════ */
+  .avail-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .avail-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: availPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  @keyframes availPing {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    80%, 100% { transform: scale(2.6); opacity: 0; }
+  }
+
+  /* Card lift for service/process/track cards */
+  .lift { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+  .lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    border-color: rgba(99, 102, 241, 0.35);
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge-live { background: rgba(20,184,166,0.12); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.3); }
+  .badge-concept { background: rgba(234,179,8,0.10); color: #6366f1; border: 1px solid rgba(234,179,8,0.3); }
+
+  /* ══════════════════════════════════════
+     CURSOR SPOTLIGHT ON CARDS
+  ══════════════════════════════════════ */
+  .glass-card { position: relative; }
+  .glass-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, -20%), rgba(99, 102, 241, 0.14), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glass-card:hover::after { opacity: 1; }
+  .glass-card > * { position: relative; z-index: 1; }
+
+  /* ══════════════════════════════════════
+     NAV SHRINK ON SCROLL
+  ══════════════════════════════════════ */
+  #site-header.scrolled {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+  }
+  #header-inner { transition: padding 0.3s ease; }
+  #site-header.scrolled #header-inner { padding-top: 0.55rem; padding-bottom: 0.55rem; }
+
+  /* ══════════════════════════════════════
+     STAGGERED SCROLL REVEAL
+  ══════════════════════════════════════ */
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-item.revealed { opacity: 1; transform: none; }
+
+  /* Buttons ready for magnetic transform */
+  .btn-primary, .btn-secondary { will-change: transform; }
+
+  /* ══════════════════════════════════════
+     REDUCED MOTION — respect user preference
+  ══════════════════════════════════════ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .floating, .pulse-glow, .avail-dot::after { animation: none !important; }
+  }
 </style>
 </head>
-<body class="bg-dark-900 text-slate-200 font-sans antialiased">
+<body class="bg-dark-900 text-stone-200 font-sans antialiased">
+
+<!-- Animated WebGL gradient background (whole page) -->
+<canvas id="hero-shader" class="fixed inset-0 w-full h-full pointer-events-none" style="opacity:0.4;z-index:-10"></canvas>
 
 <!-- GooeyText SVG Filter (invisible, needed in DOM) -->
 <svg class="gooey-filter-svg" aria-hidden="true" focusable="false">
@@ -421,34 +537,40 @@
 </svg>
 
 <!-- Header -->
-<header class="fixed w-full z-50 glass">
-  <div class="container mx-auto px-6 py-4">
+<header id="site-header" class="fixed w-full z-50 glass transition-all duration-300">
+  <div class="container mx-auto px-6 py-4" id="header-inner">
     <div class="flex justify-between items-center">
 
-      <a href="#hero" class="text-xl font-bold text-white flex items-center gap-2">MKG</a>
+      <a href="#hero" class="flex items-center gap-2.5 group" aria-label="Marios Giannoulis — home">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/30">M</span>
+        <span class="text-lg font-bold text-white tracking-tight">Marios <span class="text-stone-400 font-medium group-hover:text-white transition">Giannoulis</span></span>
+      </a>
 
       <nav class="hidden md:block">
         <ul class="flex space-x-8 items-center">
           <li>
-            <a href="#about" class="nav-link text-slate-300 hover:text-white transition text-sm font-medium">About</a>
+            <a href="#about" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">About</a>
           </li>
           <li>
-            <a href="#studies" class="nav-link text-slate-300 hover:text-white transition text-sm font-medium">Studies</a>
+            <a href="#studies" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Studies</a>
           </li>
           <li class="relative">
-            <button id="projects-button" class="nav-link text-slate-300 hover:text-white transition text-sm font-medium flex items-center gap-1">
+            <button id="projects-button" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium flex items-center gap-1">
               Projects <i class="fas fa-chevron-down text-xs"></i>
             </button>
             <div id="projects-dropdown" class="absolute left-0 mt-3 w-48 glass rounded-xl shadow-lg hidden">
-              <a href="#client-projects" class="dropdown-link block px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-dark-800 transition rounded-t-xl">Client Projects</a>
-              <a href="#personal-projects" class="dropdown-link block px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-dark-800 transition rounded-b-xl">Personal Projects</a>
+              <a href="#client-projects" class="dropdown-link block px-4 py-3 text-sm text-stone-300 hover:text-white hover:bg-dark-800 transition rounded-t-xl">Client Projects</a>
+              <a href="#personal-projects" class="dropdown-link block px-4 py-3 text-sm text-stone-300 hover:text-white hover:bg-dark-800 transition rounded-b-xl">Personal Projects</a>
             </div>
           </li>
           <li>
-            <a href="#skills" class="nav-link text-slate-300 hover:text-white transition text-sm font-medium">Skills</a>
+            <a href="#services" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Services</a>
           </li>
           <li>
-            <a href="#contact" class="nav-link text-slate-300 hover:text-white transition text-sm font-medium">Contact</a>
+            <a href="#skills" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Skills</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Contact</a>
           </li>
         </ul>
       </nav>
@@ -463,12 +585,13 @@
   <div class="hidden md:hidden glass" id="mobile-menu">
     <div class="container mx-auto px-6 py-4">
       <ul class="space-y-4">
-        <li><a href="#about" class="block py-2 text-slate-300 hover:text-white transition">About</a></li>
-        <li><a href="#studies" class="block py-2 text-slate-300 hover:text-white transition">Studies</a></li>
-        <li><a href="#client-projects" class="block py-2 text-slate-300 hover:text-white transition">Client Projects</a></li>
-        <li><a href="#personal-projects" class="block py-2 text-slate-300 hover:text-white transition">Personal Projects</a></li>
-        <li><a href="#skills" class="block py-2 text-slate-300 hover:text-white transition">Skills</a></li>
-        <li><a href="#contact" class="block py-2 text-slate-300 hover:text-white transition">Contact</a></li>
+        <li><a href="#about" class="block py-2 text-stone-300 hover:text-white transition">About</a></li>
+        <li><a href="#studies" class="block py-2 text-stone-300 hover:text-white transition">Studies</a></li>
+        <li><a href="#client-projects" class="block py-2 text-stone-300 hover:text-white transition">Client Projects</a></li>
+        <li><a href="#personal-projects" class="block py-2 text-stone-300 hover:text-white transition">Personal Projects</a></li>
+        <li><a href="#services" class="block py-2 text-stone-300 hover:text-white transition">Services</a></li>
+        <li><a href="#skills" class="block py-2 text-stone-300 hover:text-white transition">Skills</a></li>
+        <li><a href="#contact" class="block py-2 text-stone-300 hover:text-white transition">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -491,8 +614,11 @@
     <div class="container mx-auto px-6 text-center relative z-10">
       <div class="animate-fade-up">
 
-        <!-- Eyebrow -->
-        <p class="text-primary font-mono text-sm mb-6 tracking-wider">Hello, I'm</p>
+        <!-- Availability badge -->
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass text-sm text-stone-200 hover:text-white transition">
+          <span class="avail-dot"></span>
+          Available for freelance projects &amp; tech roles
+        </a>
 
         <!-- Name -->
         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -501,16 +627,16 @@
         </h1>
 
         <!-- ── GooeyText Morphing Role ── -->
-        <div class="gooey-morph-outer mb-2" id="gooey-section">
+        <div class="gooey-morph-outer mb-4" id="gooey-section">
           <div class="gooey-morph-inner">
             <span class="gooey-span" id="gooey-t1"></span>
             <span class="gooey-span" id="gooey-t2"></span>
           </div>
         </div>
 
-        <!-- ── AnimatedHero Rotating Subtitle ── -->
-        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto">
-          building
+        <!-- ── Rotating subtitle ── -->
+        <p class="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          crafting
           <span class="rotating-words-outer">
             <span class="rotating-word word-active gradient-text font-semibold">efficient</span>
             <span class="rotating-word gradient-text font-semibold">elegant</span>
@@ -518,7 +644,7 @@
             <span class="rotating-word gradient-text font-semibold">fast</span>
             <span class="rotating-word gradient-text font-semibold">smart</span>
           </span>
-          software &amp; web experiences 
+          software &amp; web experiences
         </p>
 
         <!-- CTAs -->
@@ -526,17 +652,17 @@
           <a href="#client-projects" class="btn-primary px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2">
             <i class="fas fa-code"></i> View Projects
           </a>
-          <a href="cv/MYCV.pdf" download class="btn-secondary px-8 py-4 rounded-xl font-semibold text-slate-300 inline-flex items-center justify-center gap-2">
+          <a href="cv/MyCV.pdf" download class="btn-secondary px-8 py-4 rounded-xl font-semibold text-stone-200 inline-flex items-center justify-center gap-2">
             <i class="fas fa-download"></i> Download CV
           </a>
-          <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl font-semibold text-slate-300 inline-flex items-center justify-center gap-2">
+          <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl font-semibold text-stone-200 inline-flex items-center justify-center gap-2">
             <i class="fas fa-envelope"></i> Contact Me
           </a>
         </div>
 
         <!-- Scroll arrow -->
-        <div class="mt-16 floating">
-          <a href="#about" class="text-slate-500 hover:text-primary transition inline-block">
+        <div class="mt-14 floating">
+          <a href="#about" class="text-stone-500 hover:text-primary transition inline-block" aria-label="Scroll to about">
             <i class="fas fa-chevron-down text-2xl"></i>
           </a>
         </div>
@@ -554,10 +680,10 @@
         </h2>
         <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
         <div class="glass-card rounded-2xl p-8 md:p-10">
-          <p class="text-lg text-slate-300 leading-relaxed mb-6">
-            Hi! I'm <span class="text-white font-semibold">Marios Konstantinos Giannoulis</span>, a 19-year-old developer with a strong interest in algorithms, performance optimization and modern web development. I love solving problems and creating meaningful, efficient software. My passion lies in algorithm design and optimizing solutions to complex computational challenges.
+          <p class="text-lg text-stone-300 leading-relaxed mb-6">
+            Hi! I'm <span class="text-white font-semibold">Marios Konstantinos Giannoulis</span>, a 20-year-old developer with a strong interest in algorithms, performance optimization and modern web development. I love solving problems and creating meaningful, efficient software. My passion lies in algorithm design and optimizing solutions to complex computational challenges.
           </p>
-          <p class="text-lg text-slate-300 leading-relaxed">
+          <p class="text-lg text-stone-300 leading-relaxed">
             Alongside my studies I build modern websites for businesses and personal brands while continuously developing algorithmic and software engineering projects.
           </p>
         </div>
@@ -580,13 +706,13 @@
             </div>
             <div>
               <h3 class="text-xl font-semibold text-white mb-1">National and Kapodistrian University of Athens</h3>
-              <p class="text-slate-400">Department of Informatics and Telecommunications</p>
+              <p class="text-stone-400">Department of Informatics and Telecommunications</p>
             </div>
           </div>
-          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          <p class="text-lg text-stone-300 leading-relaxed mb-6">
             Currently pursuing a degree at the <a href="https://www.di.uoa.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent transition underline underline-offset-4">Department of Informatics and Telecommunications</a>, where I'm developing a strong foundation in computer science, data structures, algorithms, and software design.
           </p>
-          <p class="text-lg text-slate-300 leading-relaxed">
+          <p class="text-lg text-stone-300 leading-relaxed">
             I'm particularly interested in how efficient code and clean system architecture can solve real-world problems — bridging theory with practical development. My academic path is driven by an interest in performance engineering, efficient memory usage, and clean code architecture.
           </p>
         </div>
@@ -606,7 +732,7 @@
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-3">
           Building Modern <span class="gradient-text">Digital Experiences</span>
         </h2>
-        <p class="text-slate-400 text-lg max-w-xl mx-auto">
+        <p class="text-stone-400 text-lg max-w-xl mx-auto">
           From AI landing pages to law firm sites — crafted with precision and purpose.
         </p>
       </div>
@@ -646,77 +772,105 @@
         <div class="grid md:grid-cols-2 gap-8">
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/zoilamalaw.jpg" class="w-full aspect-[16/9] object-cover" alt="Zoi Lama Law Firm">
+            <img src="images/zoilamalaw.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Zoi Lama Law Firm">
             <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-live"><i class="fas fa-circle text-[6px]"></i> Live client</span>
+                <span class="text-xs text-stone-500 font-mono">Law Firm</span>
+              </div>
               <h3 class="text-xl font-bold text-white mb-2">Zoi Lama — Law Firm Website</h3>
-              <p class="text-slate-400 mb-4">A professional trilingual law firm website (EN / GR / FR) designed for clarity, trust and international clients.</p>
-              <a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank" class="text-primary hover:text-accent font-medium flex items-center gap-2">
+              <p class="text-stone-400 mb-4">A professional trilingual law firm website (EN / GR / FR) designed for clarity, trust and international clients.</p>
+              <a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
                 <i class="fas fa-arrow-up-right-from-square"></i> View Live
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/giannoulis.png" class="w-full aspect-[16/9] object-cover" alt="Dr. Ioannis Giannoulis">
+            <img src="images/giannoulis.png" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Dr. Ioannis Giannoulis">
             <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-live"><i class="fas fa-circle text-[6px]"></i> Live client</span>
+                <span class="text-xs text-stone-500 font-mono">Academic</span>
+              </div>
               <h3 class="text-xl font-bold text-white mb-2">Dr. Ioannis Giannoulis — Academic Portfolio</h3>
-              <p class="text-slate-400 mb-4">A bilingual academic portfolio for a university lecturer, focused on clean structure and professional presentation.</p>
-              <a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank" class="text-primary hover:text-accent font-medium flex items-center gap-2">
+              <p class="text-stone-400 mb-4">A bilingual academic portfolio for a university lecturer, focused on clean structure and professional presentation.</p>
+              <a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
                 <i class="fas fa-arrow-up-right-from-square"></i> View Live
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/barbermission.jpg" class="w-full aspect-[16/9] object-cover" alt="Barber Mission">
+            <img src="images/barbermission.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Barber Mission">
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">Barber Mission — Business Website Concept</h3>
-              <p class="text-slate-400 mb-4">A premium dark themed website for a modern barbershop brand, focused on strong visuals and minimal design.</p>
-              <a href="https://pixel-node-studio.github.io/barbermission.gr/" target="_blank" class="text-primary hover:text-accent font-medium flex items-center gap-2">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
+                <span class="text-xs text-stone-500 font-mono">Barbershop</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Barber Mission — Business Website</h3>
+              <p class="text-stone-400 mb-4">A premium dark themed website for a modern barbershop brand, focused on strong visuals and minimal design.</p>
+              <a href="https://pixel-node-studio.github.io/barbermission.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
                 <i class="fas fa-arrow-up-right-from-square"></i> View Live
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image1.jpg" class="w-full aspect-[16/9] object-cover" alt="Maria's Bakery">
+            <img src="images/image1.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Maria's Bakery">
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">Maria's Bakery — Business Website Concept</h3>
-              <p class="text-slate-400 mb-4">A cozy bakery concept website with warm visuals and elegant typography designed to feel welcoming and authentic.</p>
-              <a href="https://mariosgian.github.io/Bakery/" target="_blank" class="text-primary hover:text-accent font-medium flex items-center gap-2">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
+                <span class="text-xs text-stone-500 font-mono">Bakery</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Maria's Bakery — Business Website</h3>
+              <p class="text-stone-400 mb-4">A cozy bakery concept website with warm visuals and elegant typography designed to feel welcoming and authentic.</p>
+              <a href="https://mariosgian.github.io/Bakery/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
                 <i class="fas fa-arrow-up-right-from-square"></i> View Live
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image3.jpg" class="w-full aspect-[16/9] object-cover" alt="Creative Digital Agency">
+            <img src="images/image3.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Creative Digital Agency">
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-3">Creative Digital Agency — Landing Page Concept</h3>
-              <p class="text-slate-400 mb-6">A modern agency landing page showcasing clean UI structure, responsive design and professional layout.</p>
-              <a href="https://mariosgian.github.io/Creative-Digital-Agency/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
+                <span class="text-xs text-stone-500 font-mono">Agency</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Creative Digital Agency — Landing Page</h3>
+              <p class="text-stone-400 mb-6">A modern agency landing page showcasing clean UI structure, responsive design and professional layout.</p>
+              <a href="https://mariosgian.github.io/Creative-Digital-Agency/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
                 <i class="fas fa-globe"></i> Live Demo
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image2.jpg" class="w-full aspect-[16/9] object-cover" alt="Fit With Alex">
+            <img src="images/image2.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Fit With Alex">
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-3">Fit With Alex — Personal Trainer Website Concept</h3>
-              <p class="text-slate-400 mb-6">A sleek one-page personal trainer website focused on modern design, service presentation and smooth UX.</p>
-              <a href="https://mariosgian.github.io/Personal-Trainer/" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
+                <span class="text-xs text-stone-500 font-mono">Fitness</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Fit With Alex — Personal Trainer Website</h3>
+              <p class="text-stone-400 mb-6">A sleek one-page personal trainer website focused on modern design, service presentation and smooth UX.</p>
+              <a href="https://mariosgian.github.io/Personal-Trainer/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
                 <i class="fas fa-globe"></i> Live Demo
               </a>
             </div>
           </div>
 
           <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/nexora.jpg" class="w-full aspect-[16/9] object-cover object-top" alt="Nexora AI Landing Page">
+            <img src="images/nexora.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover object-top" alt="Nexora AI Landing Page">
             <div class="p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
+                <span class="text-xs text-stone-500 font-mono">AI SaaS</span>
+              </div>
               <h3 class="text-xl font-bold text-white mb-2">Nexora — AI Infrastructure Landing Page</h3>
-              <p class="text-slate-400 mb-4">A futuristic glassmorphism landing page for an AI SaaS platform. Particle animations, custom cursor, live metrics UI and full pricing section.</p>
-              <a href="https://mariosgian.github.io/nexoralanding/" target="_blank" class="text-primary hover:text-accent font-medium flex items-center gap-2">
+              <p class="text-stone-400 mb-4">A futuristic glassmorphism landing page for an AI SaaS platform. Particle animations, custom cursor, live metrics UI and full pricing section.</p>
+              <a href="https://mariosgian.github.io/nexoralanding/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
                 <i class="fas fa-globe"></i> Live Demo
               </a>
             </div>
@@ -744,10 +898,10 @@
               <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                 <i class="fas fa-car text-primary"></i>
               </div>
-              <span class="text-xs font-mono text-slate-500">C++ • Simulation</span>
+              <span class="text-xs font-mono text-stone-500">C++ • Simulation</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Self-Driving Car Simulation</h3>
-            <p class="text-slate-400 mb-6">A C++ simulation of an autonomous vehicle navigating a GridWorld using sensors, sensor fusion and GPS navigation logic.</p>
+            <p class="text-stone-400 mb-6">A C++ simulation of an autonomous vehicle navigating a GridWorld using sensors, sensor fusion and GPS navigation logic.</p>
             <a href="https://github.com/Mariosgian/self-driving-car-simulation-cpp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
               <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
             </a>
@@ -758,10 +912,10 @@
               <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                 <i class="fas fa-dna text-accent"></i>
               </div>
-              <span class="text-xs font-mono text-slate-500">C++ • OOP</span>
+              <span class="text-xs font-mono text-stone-500">C++ • OOP</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Protein Synthesis Simulator</h3>
-            <p class="text-slate-400 mb-6">An object-oriented C++ simulation of protein synthesis in a eukaryotic cell, modeling transcription, RNA transport and translation into proteins.</p>
+            <p class="text-stone-400 mb-6">An object-oriented C++ simulation of protein synthesis in a eukaryotic cell, modeling transcription, RNA transport and translation into proteins.</p>
             <a href="https://github.com/Mariosgian/protein-synthesis-simulator" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
               <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
             </a>
@@ -772,10 +926,10 @@
               <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                 <i class="fas fa-route text-primary"></i>
               </div>
-              <span class="text-xs font-mono text-slate-500">C++ • Algorithms</span>
+              <span class="text-xs font-mono text-stone-500">C++ • Algorithms</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Traveling Salesman Solver</h3>
-            <p class="text-slate-400 mb-6">A C++ implementation of heuristic algorithms solving the Traveling Salesman Problem and comparing route optimization strategies.</p>
+            <p class="text-stone-400 mb-6">A C++ implementation of heuristic algorithms solving the Traveling Salesman Problem and comparing route optimization strategies.</p>
             <a href="https://github.com/Mariosgian/TSP-Algorithm" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
               <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
             </a>
@@ -786,10 +940,10 @@
               <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
                 <i class="fas fa-calculator text-accent"></i>
               </div>
-              <span class="text-xs font-mono text-slate-500">C • Algorithms</span>
+              <span class="text-xs font-mono text-stone-500">C • Algorithms</span>
             </div>
             <h3 class="text-xl font-bold text-white mb-3">Factorization Algorithm</h3>
-            <p class="text-slate-400 mb-6">A C implementation that factorizes large integers efficiently using number theory techniques.</p>
+            <p class="text-stone-400 mb-6">A C implementation that factorizes large integers efficiently using number theory techniques.</p>
             <a href="https://github.com/Mariosgian/Factor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
               <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
             </a>
@@ -800,40 +954,65 @@
     </div>
   </section>
 
-  <!-- What I Build Section -->
-  <section class="py-24 animate-fade-up">
+  <!-- What I Do — Dual Track -->
+  <section id="services" class="py-24 animate-fade-up">
     <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-5xl mx-auto">
 
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">What I Build</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-10"></div>
+        <div class="text-center mb-12">
+          <span class="inline-block font-mono text-xs font-bold tracking-widest text-primary uppercase mb-4">How I Can Help</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">
+            <span class="gradient-text">Two things I do well</span>
+          </h2>
+          <p class="text-stone-400 max-w-xl mx-auto">Whether you need a website that wins clients or an engineer who ships clean, efficient code &mdash; I've got you.</p>
+        </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 gap-8">
 
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-              <i class="fas fa-globe text-primary"></i>
+          <!-- Track 1: For Businesses -->
+          <div class="glass-card rounded-2xl p-8 lift">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                <i class="fas fa-globe text-primary text-xl"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-primary uppercase tracking-wider">For Businesses</span>
+                <h3 class="text-xl font-bold text-white">Websites that convert</h3>
+              </div>
             </div>
-            <h3 class="text-lg font-bold text-white mb-3">Business Websites</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Clean, fast, mobile-friendly sites for local businesses and professionals.</p>
+            <p class="text-stone-400 mb-6 leading-relaxed">Fast, modern, mobile-first sites built to turn visitors into customers &mdash; and make your brand look established.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Business &amp; landing page websites</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Multilingual &amp; SEO-ready builds</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Responsive on every device</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Fast load times &amp; clean UX</li>
+            </ul>
+            <a href="#contact" class="text-primary hover:text-accent font-medium inline-flex items-center gap-2 transition">
+              Start a project <i class="fas fa-arrow-right text-sm"></i>
+            </a>
           </div>
 
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
-              <i class="fas fa-bullseye text-accent"></i>
+          <!-- Track 2: For Engineering Teams -->
+          <div class="glass-card rounded-2xl p-8 lift">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                <i class="fas fa-microchip text-accent text-xl"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-accent uppercase tracking-wider">For Engineering Teams</span>
+                <h3 class="text-xl font-bold text-white">Software that performs</h3>
+              </div>
             </div>
-            <h3 class="text-lg font-bold text-white mb-3">Landing Pages</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Conversion-focused one-pagers designed to turn visitors into clients.</p>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6">
-            <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
-              <i class="fas fa-user-circle text-primary"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-3">Personal Brands</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Portfolio and personal brand sites for creators, freelancers, and founders.</p>
+            <p class="text-stone-400 mb-6 leading-relaxed">A CS student who cares about correctness, performance and clean architecture &mdash; ready to contribute as an intern or junior engineer.</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> C / C++ systems &amp; algorithms</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Data structures &amp; optimization</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Object-oriented design</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Clean, documented, tested code</li>
+            </ul>
+            <a href="#personal-projects" class="text-accent hover:text-primary font-medium inline-flex items-center gap-2 transition">
+              See my code <i class="fas fa-arrow-right text-sm"></i>
+            </a>
           </div>
 
         </div>
@@ -854,54 +1033,79 @@
         <div class="glass-card rounded-2xl p-8 md:p-10">
 
           <div class="mb-8">
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Programming</h3>
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Programming Languages</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C++</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fab fa-js text-primary"></i> JavaScript</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-bug text-primary"></i> Debugging</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C++</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-js text-primary"></i> JavaScript</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-python text-primary"></i> Python</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-java text-primary"></i> Java</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-html5 text-primary"></i> HTML5</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-database text-primary"></i> SQL</span>
             </div>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Computer Science</h3>
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Computer Science</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-project-diagram text-primary"></i> Data Structures</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-brain text-primary"></i> Algorithms</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-cubes text-primary"></i> Object-Oriented Programming</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-slate-200 flex items-center gap-2"><i class="fas fa-network-wired text-primary"></i> System Design Fundamentals</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-project-diagram text-primary"></i> Data Structures</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-brain text-primary"></i> Algorithms</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-cubes text-primary"></i> Object-Oriented Programming</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-network-wired text-primary"></i> System Design Fundamentals</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-memory text-primary"></i> Memory Management</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-sitemap text-primary"></i> Operating Systems</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-bug text-primary"></i> Debugging</span>
             </div>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Web Development</h3>
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Web Development</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-slate-200 flex items-center gap-2"><i class="fab fa-html5 text-accent"></i> HTML</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-slate-200 flex items-center gap-2"><i class="fab fa-css3-alt text-accent"></i> CSS</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-slate-200 flex items-center gap-2"><i class="fab fa-css3 text-accent"></i> Tailwind CSS</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-slate-200 flex items-center gap-2"><i class="fab fa-js text-accent"></i> JavaScript</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-slate-200 flex items-center gap-2"><i class="fas fa-mobile-alt text-accent"></i> Responsive Design</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-html5 text-accent"></i> HTML5</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3-alt text-accent"></i> CSS3</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3 text-accent"></i> Tailwind CSS</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-js text-accent"></i> JavaScript (ES6+)</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-react text-accent"></i> React</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-node-js text-accent"></i> Node.js</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-mobile-alt text-accent"></i> Responsive Design</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-universal-access text-accent"></i> Accessibility</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-search text-accent"></i> SEO Basics</span>
             </div>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Tools & Technologies</h3>
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Tools & Technologies</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fab fa-git-alt text-slate-400"></i> Git</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fab fa-github text-slate-400"></i> GitHub</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-terminal text-slate-400"></i> Linux / CLI</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-database text-slate-400"></i> SQL Basics</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-git-alt text-stone-400"></i> Git</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-github text-stone-400"></i> GitHub</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-terminal text-stone-400"></i> Linux / CLI</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-stone-400"></i> VS Code</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-figma text-stone-400"></i> Figma</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-database text-stone-400"></i> MySQL</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-npm text-stone-400"></i> npm</span>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Professional Skills</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-lightbulb text-stone-400"></i> Problem Solving</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-brain text-stone-400"></i> Analytical Thinking</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-comments text-stone-400"></i> Communication</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-users text-stone-400"></i> Team Collaboration</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-clock text-stone-400"></i> Time Management</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-sync-alt text-stone-400"></i> Adaptability</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-book-open text-stone-400"></i> Fast Learner</span>
             </div>
           </div>
 
           <div>
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Professional Skills</h3>
+            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Languages</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-lightbulb text-slate-400"></i> Problem Solving</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-brain text-slate-400"></i> Analytical Thinking</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-comments text-slate-400"></i> Communication</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-users text-slate-400"></i> Team Collaboration</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-slate-200 flex items-center gap-2"><i class="fas fa-clock text-slate-400"></i> Time Management</span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> Greek <span class="text-xs text-stone-500">&mdash; Native</span></span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> English <span class="text-xs text-stone-500">&mdash; Fluent</span></span>
+              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> French <span class="text-xs text-stone-500">&mdash; Fluent</span></span>
             </div>
           </div>
 
@@ -919,33 +1123,24 @@
         </h2>
         <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
         <div class="glass-card rounded-2xl p-8 md:p-10">
-          <p class="text-slate-400 mb-8">Have a project in mind? Let's talk.</p>
+          <p class="text-stone-400 mb-8">Have a project or role in mind? Let's talk &mdash; I usually reply within a day.</p>
           <div class="grid sm:grid-cols-2 gap-6">
             <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
               <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
                 <i class="fab fa-linkedin text-blue-400 text-xl"></i>
               </div>
               <div>
-                <p class="text-sm text-slate-500">LinkedIn</p>
+                <p class="text-sm text-stone-500">LinkedIn</p>
                 <p class="text-white font-medium">Marios Giannoulis</p>
               </div>
             </a>
             <a href="https://github.com/Mariosgian" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 rounded-lg bg-slate-500/20 flex items-center justify-center">
-                <i class="fab fa-github text-slate-300 text-xl"></i>
+              <div class="w-12 h-12 rounded-lg bg-stone-500/20 flex items-center justify-center">
+                <i class="fab fa-github text-stone-300 text-xl"></i>
               </div>
               <div>
-                <p class="text-sm text-slate-500">GitHub</p>
+                <p class="text-sm text-stone-500">GitHub</p>
                 <p class="text-white font-medium">@Mariosgian</p>
-              </div>
-            </a>
-            <a href="https://instagram.com/giannoulis.m" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 rounded-lg bg-pink-500/20 flex items-center justify-center">
-                <i class="fab fa-instagram text-pink-400 text-xl"></i>
-              </div>
-              <div>
-                <p class="text-sm text-slate-500">Instagram</p>
-                <p class="text-white font-medium">@giannoulis.m</p>
               </div>
             </a>
             <a href="mailto:mariosgiannouliw@gmail.com" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
@@ -953,7 +1148,7 @@
                 <i class="fas fa-envelope text-primary text-xl"></i>
               </div>
               <div>
-                <p class="text-sm text-slate-500">Email</p>
+                <p class="text-sm text-stone-500">Email</p>
                 <p class="text-white font-medium">mariosgiannouliw@gmail.com</p>
               </div>
             </a>
@@ -966,14 +1161,25 @@
 </main>
 
 <!-- Footer -->
-<footer class="border-t border-dark-700 py-8">
+<footer class="border-t border-dark-700 py-10">
   <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-slate-500 text-sm">
-        © 2026 Marios Konstantinos Giannoulis<br>
-        Built with HTML, Tailwind & JavaScript
-      </p>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <a href="#hero" class="text-lg font-bold gradient-text">Marios Giannoulis</a>
+        <p class="text-stone-500 text-sm mt-1">Web Developer &amp; Software Engineer · Athens, Greece</p>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+        <a href="#services" class="text-stone-400 hover:text-white transition">Services</a>
+        <a href="#client-projects" class="text-stone-400 hover:text-white transition">Work</a>
+        <a href="#skills" class="text-stone-400 hover:text-white transition">Skills</a>
+        <a href="#contact" class="text-stone-400 hover:text-white transition">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/Mariosgian" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition" aria-label="GitHub"><i class="fab fa-github text-lg"></i></a>
+        <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition" aria-label="LinkedIn"><i class="fab fa-linkedin text-lg"></i></a>
+      </div>
     </div>
+    <p class="text-stone-600 text-xs text-center mt-8">© 2026 Marios Konstantinos Giannoulis · Built with HTML, Tailwind &amp; JavaScript</p>
   </div>
 </footer>
 
@@ -1196,11 +1402,199 @@ window.addEventListener('scroll', () => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
       });
+      // Projects button (no href) — underline while in either projects section
+      const projectsBtn = document.getElementById('projects-button');
+      if (projectsBtn && (id === 'client-projects' || id === 'personal-projects')) {
+        projectsBtn.classList.add('active');
+      }
     }
   });
 });
 
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ══════════════════════════════════════════════════════════
+//  NAV SHRINK ON SCROLL
+// ══════════════════════════════════════════════════════════
+(function initHeaderShrink() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ══════════════════════════════════════════════════════════
+//  STAGGERED SCROLL REVEAL (cards cascade in)
+// ══════════════════════════════════════════════════════════
+(function initReveal() {
+  const cards = document.querySelectorAll('.glass-card, .project-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  cards.forEach(el => {
+    el.classList.add('reveal-item');
+    const idx = Array.prototype.indexOf.call(el.parentElement.children, el);
+    el.style.transitionDelay = (Math.min(idx, 6) * 70) + 'ms';
+    io.observe(el);
+  });
+})();
+
+// ══════════════════════════════════════════════════════════
+//  CURSOR SPOTLIGHT ON CARDS
+// ══════════════════════════════════════════════════════════
+(function initSpotlight() {
+  document.querySelectorAll('.glass-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+})();
+
+// ══════════════════════════════════════════════════════════
+//  MAGNETIC BUTTONS (subtle pull toward cursor)
+// ══════════════════════════════════════════════════════════
+(function initMagnetic() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.25}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+})();
+
+/* Animated WebGL gradient hero background (vanilla port of "Velaris") */
+(function initHeroShader() {
+  const canvas = document.getElementById('hero-shader');
+  if (!canvas) return;
+  const gl = canvas.getContext('webgl');
+  if (!gl) { canvas.style.display = 'none'; return; }
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const vert = `
+    attribute vec2 position;
+    varying vec2 vUv;
+    void main(){ vUv = position * 0.5 + 0.5; gl_Position = vec4(position, 0.0, 1.0); }`;
+
+  const frag = `
+    precision highp float;
+    varying vec2 vUv;
+    uniform vec2  u_resolution;
+    uniform float u_time;
+    uniform float u_grain;
+    uniform vec3  u_colors[4];
+    uniform vec3  u_bg;
+    vec3 permute(vec3 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
+    float snoise(vec2 v){
+      const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+      vec2 i = floor(v + dot(v, C.yy));
+      vec2 x0 = v - i + dot(i, C.xx);
+      vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+      vec4 x12 = x0.xyxy + C.xxzz; x12.xy -= i1;
+      i = mod(i, 289.0);
+      vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+      vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+      m = m*m; m = m*m;
+      vec3 x = 2.0 * fract(p * C.www) - 1.0;
+      vec3 h = abs(x) - 0.5;
+      vec3 ox = floor(x + 0.5);
+      vec3 a0 = x - ox;
+      m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+      vec3 g;
+      g.x = a0.x * x0.x + h.x * x0.y;
+      g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+      return 130.0 * dot(m, g);
+    }
+    void main(){
+      vec2 uv = vUv;
+      float ratio = u_resolution.x / u_resolution.y;
+      vec2 p = uv - 0.5; p.x *= ratio;
+      float t = u_time * 0.1;
+      float n1 = snoise(p * 0.4 + vec2(t * 0.2, -t * 0.3));
+      float n2 = snoise(p * 0.55 + vec2(-t * 0.15, t * 0.25) + n1 * 0.25);
+      float n3 = snoise(p * 0.75 + vec2(t * 0.1, -t * 0.2) + n2 * 0.2);
+      vec3 col = u_bg;
+      float dist = length(p) * 1.5;
+      float vignette = 1.0 - smoothstep(0.3, 1.2, dist);
+      col = mix(col, u_colors[0], smoothstep(-0.2, 0.5, n1) * 0.85);
+      col = mix(col, u_colors[1], smoothstep(-0.1, 0.6, n2) * 0.7);
+      col = mix(col, u_colors[2], smoothstep(-0.3, 0.4, n3) * 0.6);
+      col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.5);
+      float glow = smoothstep(0.8, 0.0, dist) * 0.3;
+      col += u_colors[1] * glow;
+      col = mix(col * 0.2, col, vignette);
+      float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453 + u_time);
+      col += (grain - 0.5) * u_grain * 0.1;
+      gl_FragColor = vec4(col, 1.0);
+    }`;
+
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, vert));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, frag));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+  const loc = {
+    res: gl.getUniformLocation(prog, 'u_resolution'),
+    time: gl.getUniformLocation(prog, 'u_time'),
+    grain: gl.getUniformLocation(prog, 'u_grain'),
+    colors: gl.getUniformLocation(prog, 'u_colors'),
+    bg: gl.getUniformLocation(prog, 'u_bg'),
+  };
+
+  const hex = (h) => { h = h.replace('#',''); return [parseInt(h.slice(0,2),16)/255, parseInt(h.slice(2,4),16)/255, parseInt(h.slice(4,6),16)/255]; };
+  // Black base + indigo / emerald to match the site palette
+  const palette = ['#6366f1', '#22c55e', '#818cf8', '#000000'];
+  const bg = hex('#000000');
+  const flat = new Float32Array(palette.flatMap(hex));
+  const speed = 1.4, grain = 0.25;
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    canvas.width = canvas.clientWidth * dpr;
+    canvas.height = canvas.clientHeight * dpr;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  };
+  const ro = new ResizeObserver(resize); ro.observe(canvas); resize();
+
+  const draw = (tMs) => {
+    gl.uniform2f(loc.res, canvas.width, canvas.height);
+    gl.uniform1f(loc.time, tMs * 0.001 * speed);
+    gl.uniform1f(loc.grain, grain);
+    gl.uniform3f(loc.bg, bg[0], bg[1], bg[2]);
+    gl.uniform3fv(loc.colors, flat);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  };
+
+  if (reduce) { draw(0); return; } // static single frame, no motion
+  let raf = 0, last = 0;
+  const loop = (t) => { last = t; draw(t); raf = requestAnimationFrame(loop); };
+  raf = requestAnimationFrame(loop);
+  // Pause when the tab is hidden to save GPU/battery
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+    else if (!raf) { raf = requestAnimationFrame(loop); }
+  });
+})();
 </script>
 </body>
 </html>
