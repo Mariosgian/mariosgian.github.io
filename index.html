@@ -1115,6 +1115,34 @@
           <div class="glass-card rounded-2xl p-6 project-card gradient-border">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                <i class="fas fa-chart-pie text-primary"></i>
+              </div>
+              <span class="text-xs font-mono text-stone-500">JavaScript • Web App</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Finance Dashboard</h3>
+            <p class="text-stone-400 mb-6">A personal finance tracker for recording income and expenses, with interactive charts built on the Canvas API — no libraries. Features category breakdowns, dark/light mode, CSV export and localStorage persistence. Zero dependencies.</p>
+            <a href="https://github.com/Mariosgian/js-finance-dashboard" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
+              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                <i class="fas fa-briefcase text-accent"></i>
+              </div>
+              <span class="text-xs font-mono text-stone-500">Python • CLI Tool</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Job Scraper</h3>
+            <p class="text-stone-400 mb-6">A Python CLI tool that scrapes job and internship listings from multiple sources using async httpx requests, filters by role, location and salary, and exports to CSV/JSON. Uses SQLite caching, Pydantic validation and a Rich terminal UI.</p>
+            <a href="https://github.com/Mariosgian/python-job-scraper" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
+              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                 <i class="fas fa-graduation-cap text-primary"></i>
               </div>
               <span class="text-xs font-mono text-stone-500">JavaScript • Web App</span>
@@ -1213,25 +1241,6 @@
         <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
 
         <div class="glass-card rounded-2xl p-8 md:p-10">
-
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 pb-10 border-b border-dark-700">
-            <div class="text-center">
-              <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="counter" data-target="15" data-suffix="+">0</span></p>
-              <p class="text-xs text-stone-500 uppercase tracking-wider mt-2">Projects</p>
-            </div>
-            <div class="text-center">
-              <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="counter" data-target="8" data-suffix="+">0</span></p>
-              <p class="text-xs text-stone-500 uppercase tracking-wider mt-2">Technologies</p>
-            </div>
-            <div class="text-center">
-              <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="counter" data-target="3">0</span></p>
-              <p class="text-xs text-stone-500 uppercase tracking-wider mt-2">Languages Spoken</p>
-            </div>
-            <div class="text-center">
-              <p class="text-4xl md:text-5xl font-bold gradient-text"><span class="counter" data-target="100" data-suffix="%">0</span></p>
-              <p class="text-xs text-stone-500 uppercase tracking-wider mt-2">Commitment</p>
-            </div>
-          </div>
 
           <div class="mb-8">
             <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Programming Languages</h3>
@@ -2008,5 +2017,42 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
   setInterval(() => { target *= 0.8; if (Math.abs(target) < 0.01) target = 0; }, 100);
 })();
 </script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] transition-transform duration-500 translate-y-full">
+  <div class="mx-3 mb-3 sm:mx-4 sm:mb-4 md:mx-8 md:mb-6 glass rounded-2xl p-5 sm:p-6 md:p-8 border border-dark-700 shadow-2xl max-w-3xl md:ml-auto md:mr-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <p class="text-white font-semibold text-sm mb-1"><i class="fas fa-cookie-bite text-primary mr-2"></i>Cookie Notice</p>
+        <p class="text-stone-400 text-xs leading-relaxed">This site uses cookies to enhance your browsing experience and analyze traffic. By clicking "Accept", you consent to the use of cookies.</p>
+      </div>
+      <div class="flex gap-3 shrink-0 w-full sm:w-auto">
+        <button id="cookie-decline" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-sm font-medium text-stone-400 hover:text-white border border-dark-600 hover:border-dark-500 active:scale-95 transition">Decline</button>
+        <button id="cookie-accept" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-sm font-medium text-white bg-primary hover:bg-blue-600 active:scale-95 transition shadow-lg shadow-primary/20">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function initCookieBanner() {
+  const banner  = document.getElementById('cookie-banner');
+  const acceptBtn  = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+  if (!banner || localStorage.getItem('cookie-consent')) return;
+
+  setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000);
+
+  function dismiss(value) {
+    localStorage.setItem('cookie-consent', value);
+    banner.classList.add('translate-y-full');
+    setTimeout(() => { banner.remove(); }, 500);
+  }
+
+  acceptBtn.addEventListener('click', () => dismiss('accepted'));
+  declineBtn.addEventListener('click', () => dismiss('declined'));
+})();
+</script>
+
 </body>
 </html>
