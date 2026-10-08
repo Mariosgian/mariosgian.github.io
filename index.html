@@ -209,8 +209,6 @@
     transform: translateY(-2px);
   }
 
-  .glow { box-shadow: 0 0 60px rgba(59, 130, 246, 0.3); }
-
   .hero-gradient {
     background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent);
   }
@@ -231,216 +229,6 @@
     transform: translateX(4px);
   }
 
-  .floating { animation: floating 3s ease-in-out infinite; }
-
-  @keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
-
-  @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.5); }
-  }
-
-  /* ══════════════════════════════════════
-     ANIMATED HERO — Rotating Words
-  ══════════════════════════════════════ */
-  .rotating-words-outer {
-    display: inline-flex;
-    position: relative;
-    overflow: hidden;
-    height: 1.35em;
-    min-width: 180px;
-    vertical-align: bottom;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .rotating-word {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.55s cubic-bezier(0.34, 1.3, 0.64, 1), opacity 0.45s ease;
-    will-change: transform, opacity;
-  }
-
-  .rotating-word.word-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .rotating-word.word-exit {
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: transform 0.4s ease, opacity 0.3s ease;
-  }
-
-  /* ══════════════════════════════════════
-     GOOEY TEXT MORPHING
-  ══════════════════════════════════════ */
-  .gooey-filter-svg {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .gooey-morph-outer {
-    position: relative;
-    height: 88px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .gooey-morph-inner {
-    filter: url(#gooey-morph-filter);
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .gooey-span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
-    color: #ffffff;
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  /* ══════════════════════════════════════
-     CONTAINER SCROLL — 3D Showcase
-  ══════════════════════════════════════ */
-  .cs-outer {
-    height: calc(100vh + 480px);
-    position: relative;
-  }
-
-  .cs-sticky {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
-    padding: 40px 24px;
-  }
-
-  .cs-header {
-    text-align: center;
-    margin-bottom: 40px;
-    will-change: transform;
-  }
-
-  .cs-card {
-    max-width: 900px;
-    width: 100%;
-    height: 420px;
-    border: 4px solid #4a4a4a;
-    padding: 12px;
-    background: #1e1e1e;
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow:
-      0 0 #0000004d,
-      0 9px 20px #0000004a,
-      0 37px 37px #00000042,
-      0 84px 50px #00000026,
-      0 149px 60px #0000000a,
-      0 233px 65px #00000003;
-    transform-origin: 50% 0%;
-    transform: rotateX(20deg) scale(1.05);
-    will-change: transform;
-  }
-
-  .cs-card-inner {
-    width: 100%;
-    height: 100%;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #18181b;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Browser chrome */
-  .cs-browser-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 16px;
-    background: #2d2d2d;
-    border-bottom: 1px solid #3a3a3a;
-    flex-shrink: 0;
-  }
-
-  .cs-dots {
-    display: flex;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-
-  .cs-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: block;
-  }
-
-  .cs-url-bar {
-    flex: 1;
-    background: #1a1a1a;
-    border-radius: 6px;
-    padding: 4px 12px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #888;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-  }
-
-  .cs-screenshot {
-    flex: 1;
-    overflow: hidden;
-  }
-
-  .cs-screenshot img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top left;
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    .cs-outer { height: calc(100vh + 280px); }
-    .cs-card { height: 260px; }
-    .gooey-span { font-size: 2rem; }
-    .cs-sticky { padding: 24px 16px; }
-  }
 
   /* ══════════════════════════════════════
      AVAILABILITY BADGE
@@ -488,24 +276,6 @@
   .badge-concept { background: rgba(234,179,8,0.10); color: #3b82f6; border: 1px solid rgba(234,179,8,0.3); }
 
   /* ══════════════════════════════════════
-     CURSOR SPOTLIGHT ON CARDS
-  ══════════════════════════════════════ */
-  .glass-card { position: relative; }
-  .glass-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, -20%), rgba(59, 130, 246, 0.14), transparent 45%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .glass-card:hover::after { opacity: 1; }
-  .glass-card > * { position: relative; z-index: 1; }
-
-  /* ══════════════════════════════════════
      NAV SHRINK ON SCROLL
   ══════════════════════════════════════ */
   #site-header.scrolled {
@@ -529,27 +299,127 @@
   }
   .reveal-item.revealed { opacity: 1; transform: none; }
 
-  /* Buttons ready for magnetic transform */
-  .btn-primary, .btn-secondary { will-change: transform; }
+  /* ══════════════════════════════════════
+     CURSOR SPOTLIGHT ON CARDS
+  ══════════════════════════════════════ */
+  .glass-card { position: relative; }
+  .glass-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, -20%), rgba(59, 130, 246, 0.14), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glass-card:hover::after { opacity: 1; }
+  .glass-card > * { position: relative; z-index: 1; }
 
   /* ══════════════════════════════════════
-     REDUCED MOTION — respect user preference
+     FLOATING (scroll arrow)
   ══════════════════════════════════════ */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-      scroll-behavior: auto !important;
-    }
-    .floating, .pulse-glow, .avail-dot::after { animation: none !important; }
-    .meteor, .marquee-track { animation: none !important; }
+  .floating { animation: floating 3s ease-in-out infinite; }
+  @keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 
   /* ══════════════════════════════════════
-     METEORS / SHOOTING STARS
+     BUTTON SHIMMER
   ══════════════════════════════════════ */
-  #meteors { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+  .shimmer { position: relative; overflow: hidden; }
+  .shimmer::after {
+    content: '';
+    position: absolute; top: 0; left: -150%;
+    width: 60%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: shimmer-sweep 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shimmer-sweep { 0% { left: -150%; } 55%, 100% { left: 150%; } }
+
+  /* ══════════════════════════════════════
+     SCROLL PROGRESS BAR
+  ══════════════════════════════════════ */
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, #3b82f6, #38bdf8);
+    z-index: 60;
+    transition: width 0.1s linear;
+  }
+
+  /* ══════════════════════════════════════
+     MARQUEE (infinite tech strip)
+  ══════════════════════════════════════ */
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .marquee-track { display: flex; width: max-content; gap: 1rem; animation: marquee-scroll 28s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee-scroll { to { transform: translateX(-50%); } }
+
+  /* ══════════════════════════════════════
+     BACKGROUND PATHS (hero SVG animation)
+  ══════════════════════════════════════ */
+  .bg-paths-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-paths-svg path {
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 0.8;
+    fill: none;
+    stroke-linecap: round;
+  }
+  @keyframes path-draw {
+    0%   { stroke-dashoffset: 1000; opacity: 0; }
+    15%  { opacity: 0.3; }
+    50%  { opacity: 0.15; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+  .bg-paths-svg .path-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: path-draw var(--dur, 12s) ease-in-out var(--delay, 0s) infinite;
+  }
+
+  /* ══════════════════════════════════════
+     STARFIELD
+  ══════════════════════════════════════ */
+  #starfield {
+    position: fixed; inset: 0;
+    z-index: -11;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(59,130,246,0.10), transparent 45%),
+      radial-gradient(ellipse at 80% 60%, rgba(99,102,241,0.08), transparent 50%),
+      #0a1730;
+  }
+  .star {
+    position: absolute;
+    border-radius: 9999px;
+    background: #fff;
+    animation: twinkle linear infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.15; }
+    50%      { opacity: 0.9; }
+  }
+
+  /* ══════════════════════════════════════
+     METEORS
+  ══════════════════════════════════════ */
+  #space-meteors { position: fixed; inset: 0; z-index: -10; pointer-events: none; overflow: hidden; }
   .meteor {
     position: absolute;
     top: -10%;
@@ -577,125 +447,41 @@
   }
 
   /* ══════════════════════════════════════
-     BORDER BEAM (animated gradient border)
+     PULSE GLOW (back-to-top)
   ══════════════════════════════════════ */
-  .border-beam { position: relative; }
-  .border-beam::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: conic-gradient(from var(--beam-angle, 0deg), transparent 0%, transparent 70%, #60a5fa 85%, #93c5fd 90%, transparent 100%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    mask-composite: exclude;
-    animation: beam-spin 5s linear infinite;
-    pointer-events: none;
-    z-index: 2;
+  .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.5); }
   }
-  @property --beam-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-  @keyframes beam-spin { to { --beam-angle: 360deg; } }
 
   /* ══════════════════════════════════════
-     MARQUEE (infinite tech strip)
+     REDUCED MOTION — respect user preference
   ══════════════════════════════════════ */
-  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-  .marquee-track { display: flex; width: max-content; gap: 1rem; animation: marquee-scroll 28s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  @keyframes marquee-scroll { to { transform: translateX(-50%); } }
-
-  /* ══════════════════════════════════════
-     BUTTON SHIMMER
-  ══════════════════════════════════════ */
-  .shimmer { position: relative; overflow: hidden; }
-  .shimmer::after {
-    content: '';
-    position: absolute; top: 0; left: -150%;
-    width: 60%; height: 100%;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.25), transparent);
-    transform: skewX(-20deg);
-    animation: shimmer-sweep 3.5s ease-in-out infinite;
-    pointer-events: none;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .floating, .pulse-glow, .avail-dot::after { animation: none !important; }
+    .meteor, .marquee-track { animation: none !important; }
   }
-  @keyframes shimmer-sweep { 0% { left: -150%; } 55%, 100% { left: 150%; } }
 
-  /* ══════════════════════════════════════
-     TEXT BLUR-IN REVEAL (headings)
-  ══════════════════════════════════════ */
-  .blur-reveal {
-    opacity: 0;
-    filter: blur(12px);
-    transform: translateY(16px);
-    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s cubic-bezier(0.2,0.7,0.2,1);
-    will-change: opacity, filter, transform;
-  }
-  .blur-reveal.revealed { opacity: 1; filter: blur(0); transform: none; }
-
-  /* ══════════════════════════════════════
-     SPACE STARFIELD (full-page fixed)
-  ══════════════════════════════════════ */
   html, body { overflow-x: hidden; }
-  #starfield {
-    position: fixed; inset: 0;
-    z-index: -11;
-    pointer-events: none;
-    overflow: hidden;
-    background:
-      radial-gradient(ellipse at 20% 15%, rgba(59,130,246,0.10), transparent 45%),
-      radial-gradient(ellipse at 80% 60%, rgba(99,102,241,0.08), transparent 50%),
-      #0a1730;
-  }
-  .star {
-    position: absolute;
-    border-radius: 9999px;
-    background: #fff;
-    animation: twinkle linear infinite;
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.15; }
-    50%      { opacity: 0.9; }
-  }
-  /* global drifting meteors (behind content) */
-  #space-meteors { position: fixed; inset: 0; z-index: -10; pointer-events: none; overflow: hidden; }
 </style>
 </head>
 <body class="bg-dark-900 text-stone-200 font-sans antialiased">
 
-<!-- Full-page space starfield -->
+<!-- Full-page starfield -->
 <div id="starfield" aria-hidden="true"></div>
 
-<!-- Global drifting meteors (behind content) -->
+<!-- Global drifting meteors -->
 <div id="space-meteors" aria-hidden="true"></div>
 
 <!-- Scroll progress bar -->
-<div id="scroll-progress" class="fixed top-0 left-0 h-1 w-0 bg-gradient-to-r from-primary to-accent z-[60]" style="box-shadow:0 0 12px rgba(56,189,248,0.6)"></div>
-
-<!-- Global cursor glow -->
-<div id="cursor-glow" class="pointer-events-none fixed -z-[5] w-[500px] h-[500px] rounded-full opacity-0 transition-opacity duration-500" style="background:radial-gradient(circle, rgba(56,189,248,0.10) 0%, rgba(56,189,248,0) 60%);transform:translate(-50%,-50%)"></div>
-
-<!-- Animated WebGL gradient background (whole page) -->
-<canvas id="hero-shader" class="fixed inset-0 w-full h-full pointer-events-none" style="opacity:0.35;z-index:-10"></canvas>
-
-<!-- Top scrim: smooths the header-to-hero transition -->
-<div class="fixed top-0 left-0 w-full h-40 pointer-events-none" style="background:linear-gradient(to bottom, #0a1730 0%, rgba(10,23,48,0.6) 40%, transparent 100%);z-index:-9"></div>
-
-<!-- GooeyText SVG Filter (invisible, needed in DOM) -->
-<svg class="gooey-filter-svg" aria-hidden="true" focusable="false">
-  <defs>
-    <filter id="gooey-morph-filter">
-      <feColorMatrix
-        in="SourceGraphic"
-        type="matrix"
-        values="1 0 0 0 0
-                0 1 0 0 0
-                0 0 1 0 0
-                0 0 0 255 -140"
-      />
-    </filter>
-  </defs>
-</svg>
+<div id="scroll-progress"></div>
 
 <!-- Header -->
 <header id="site-header" class="fixed w-full z-50 glass transition-all duration-300">
@@ -764,14 +550,24 @@
   ══════════════════════════════════════════ -->
   <section id="hero" class="min-h-screen flex items-center justify-center relative hero-gradient overflow-hidden">
 
-    <!-- Meteors / shooting stars -->
-    <div id="meteors" aria-hidden="true"></div>
+    <!-- Background Paths SVG -->
+    <svg class="bg-paths-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="path-line" style="--dur:14s;--delay:0s" d="M-50,700 Q200,680 400,620 T800,500 T1200,450 T1500,350"/>
+      <path class="path-line" style="--dur:16s;--delay:1s" d="M-50,750 Q250,720 500,650 T900,520 T1300,400 T1550,300"/>
+      <path class="path-line" style="--dur:12s;--delay:2s" d="M-50,800 Q300,760 550,680 T950,550 T1350,420 T1550,280"/>
+      <path class="path-line" style="--dur:18s;--delay:0.5s" d="M-50,650 Q150,640 350,590 T750,480 T1150,430 T1500,380"/>
+      <path class="path-line" style="--dur:15s;--delay:3s" d="M-50,850 Q350,800 600,710 T1000,570 T1400,440 T1550,250"/>
+      <path class="path-line" style="--dur:13s;--delay:1.5s" d="M-50,720 Q220,700 450,640 T850,510 T1250,440 T1520,330"/>
+      <path class="path-line" style="--dur:17s;--delay:2.5s" d="M-50,780 Q280,750 530,670 T930,540 T1330,410 T1540,260"/>
+      <path class="path-line" style="--dur:11s;--delay:0.8s" d="M-50,680 Q180,665 380,610 T780,490 T1180,440 T1510,360"/>
+      <path class="path-line" style="--dur:19s;--delay:3.5s" d="M-50,870 Q380,830 650,730 T1050,580 T1420,450 T1560,220"/>
+      <path class="path-line" style="--dur:14s;--delay:1.8s" d="M-50,740 Q240,715 470,650 T870,515 T1270,430 T1530,310"/>
+    </svg>
 
     <!-- Background blobs -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
     </div>
 
     <div class="container mx-auto px-6 text-center relative z-10">
@@ -789,25 +585,10 @@
           <span class="gradient-text">Giannoulis</span>
         </h1>
 
-        <!-- ── GooeyText Morphing Role ── -->
-        <div class="gooey-morph-outer mb-4" id="gooey-section">
-          <div class="gooey-morph-inner">
-            <span class="gooey-span" id="gooey-t1"></span>
-            <span class="gooey-span" id="gooey-t2"></span>
-          </div>
-        </div>
+        <p class="text-xl md:text-2xl text-stone-300 font-semibold mb-4">Web Developer &amp; Software Engineer</p>
 
-        <!-- ── Rotating subtitle ── -->
-        <p class="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          crafting
-          <span class="rotating-words-outer">
-            <span class="rotating-word word-active gradient-text font-semibold">efficient</span>
-            <span class="rotating-word gradient-text font-semibold">elegant</span>
-            <span class="rotating-word gradient-text font-semibold">modern</span>
-            <span class="rotating-word gradient-text font-semibold">fast</span>
-            <span class="rotating-word gradient-text font-semibold">smart</span>
-          </span>
-          software &amp; web experiences
+        <p class="text-lg md:text-xl text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Building clean, efficient software and modern web experiences.
         </p>
 
         <!-- CTAs -->
@@ -883,45 +664,6 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       CONTAINER SCROLL — 3D Featured Showcase
-  ══════════════════════════════════════════ -->
-  <div id="cs-outer" class="cs-outer">
-    <div class="cs-sticky">
-
-      <!-- Header (slides up on scroll) -->
-      <div class="cs-header" id="cs-header">
-        <span class="inline-block font-mono text-xs font-bold tracking-widest text-primary uppercase mb-4">Featured Work</span>
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-3">
-          Building Modern <span class="gradient-text">Digital Experiences</span>
-        </h2>
-        <p class="text-stone-400 text-lg max-w-xl mx-auto">
-          From AI landing pages to law firm sites — crafted with precision and purpose.
-        </p>
-      </div>
-
-      <!-- 3D Card (tilts upright on scroll) -->
-      <div class="cs-card" id="cs-card">
-        <div class="cs-card-inner">
-          <!-- Browser chrome -->
-          <div class="cs-browser-bar">
-            <div class="cs-dots">
-              <span class="cs-dot" style="background:#ff5f57;"></span>
-              <span class="cs-dot" style="background:#ffbd2e;"></span>
-              <span class="cs-dot" style="background:#28c840;"></span>
-            </div>
-            <div class="cs-url-bar">mariosgian.github.io/nexoralanding/</div>
-          </div>
-          <!-- Screenshot -->
-          <div class="cs-screenshot">
-            <img src="images/nexora.jpg" alt="Nexora — AI Infrastructure Landing Page">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- Client Projects Section -->
   <section id="client-projects" class="py-24">
     <div class="container mx-auto px-6">
@@ -934,7 +676,7 @@
 
         <div class="grid md:grid-cols-2 gap-8">
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/zoilamalaw.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Zoi Lama Law Firm">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -949,7 +691,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/giannoulis.png" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Dr. Ioannis Giannoulis">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -964,7 +706,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/barbermission.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Barber Mission">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -979,7 +721,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/image1.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Maria's Bakery">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -994,7 +736,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/image3.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Creative Digital Agency">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -1009,7 +751,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/image2.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Fit With Alex">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -1024,7 +766,7 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl overflow-hidden project-card border-beam">
+          <div class="glass-card rounded-2xl overflow-hidden project-card">
             <img src="images/nexora.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover object-top" alt="Nexora AI Landing Page">
             <div class="p-6">
               <div class="flex items-center gap-2 mb-2">
@@ -1321,23 +1063,24 @@
 
         </div>
 
-        <!-- Marquee tech strip -->
+        <!-- Tech marquee strip -->
         <div class="marquee mt-8 py-4">
           <div class="marquee-track" id="tech-marquee">
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-code text-primary"></i> C++</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-js text-primary"></i> JavaScript</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-react text-primary"></i> React</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-python text-primary"></i> Python</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-node-js text-primary"></i> Node.js</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-html5 text-primary"></i> HTML5</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-database text-primary"></i> SQL</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-git-alt text-primary"></i> Git</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-figma text-primary"></i> Figma</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-java text-primary"></i> Java</span>
-            <span class="marquee-item text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3 text-primary"></i> Tailwind</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-code text-primary"></i> C++</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-js text-primary"></i> JavaScript</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-react text-primary"></i> React</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-python text-primary"></i> Python</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-node-js text-primary"></i> Node.js</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-html5 text-primary"></i> HTML5</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-database text-primary"></i> SQL</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-git-alt text-primary"></i> Git</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-figma text-primary"></i> Figma</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-java text-primary"></i> Java</span>
+            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3 text-primary"></i> Tailwind</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1428,144 +1171,6 @@
 </button>
 
 <script>
-// ══════════════════════════════════════════════════════════
-//  1. GOOEY TEXT MORPHING
-// ══════════════════════════════════════════════════════════
-(function initGooeyText() {
-  const texts  = ["Developer", "Engineer", "Designer", "Problem Solver", "Creator", "Builder"];
-  const t1     = document.getElementById('gooey-t1');
-  const t2     = document.getElementById('gooey-t2');
-  if (!t1 || !t2) return;
-
-  const MORPH_TIME    = 1;      // seconds for one morph
-  const COOLDOWN_TIME = 0.35;   // seconds to hold each word
-
-  let textIndex = texts.length - 1;
-  let lastTime  = performance.now();
-  let morph     = 0;
-  let cooldown  = COOLDOWN_TIME;
-
-  // Seed first texts
-  t1.textContent = texts[textIndex % texts.length];
-  t2.textContent = texts[(textIndex + 1) % texts.length];
-  t1.style.opacity = '0%';
-  t2.style.opacity = '100%';
-
-  function setMorph(fraction) {
-    const blur2 = Math.min(8 / fraction - 8, 100);
-    t2.style.filter  = `blur(${blur2}px)`;
-    t2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
-
-    const inv = 1 - fraction;
-    const blur1 = Math.min(8 / inv - 8, 100);
-    t1.style.filter  = `blur(${blur1}px)`;
-    t1.style.opacity = `${Math.pow(inv, 0.4) * 100}%`;
-  }
-
-  function doCooldown() {
-    morph = 0;
-    t2.style.filter  = '';
-    t2.style.opacity = '100%';
-    t1.style.filter  = '';
-    t1.style.opacity = '0%';
-  }
-
-  function doMorph() {
-    morph    -= cooldown;
-    cooldown  = 0;
-    let frac  = morph / MORPH_TIME;
-
-    if (frac > 1) {
-      cooldown = COOLDOWN_TIME;
-      frac     = 1;
-    }
-    setMorph(frac);
-  }
-
-  function loop(now) {
-    requestAnimationFrame(loop);
-    const dt  = (now - lastTime) / 1000;
-    lastTime  = now;
-
-    const shouldIncrement = cooldown > 0;
-    cooldown -= dt;
-
-    if (cooldown <= 0) {
-      if (shouldIncrement) {
-        textIndex = (textIndex + 1) % texts.length;
-        t1.textContent = texts[textIndex % texts.length];
-        t2.textContent = texts[(textIndex + 1) % texts.length];
-      }
-      doMorph();
-    } else {
-      doCooldown();
-    }
-  }
-
-  requestAnimationFrame(loop);
-})();
-
-// ══════════════════════════════════════════════════════════
-//  2. ANIMATED HERO — Rotating Words
-// ══════════════════════════════════════════════════════════
-(function initRotatingWords() {
-  const words = document.querySelectorAll('.rotating-word');
-  if (!words.length) return;
-
-  let current = 0;
-
-  function cycle() {
-    const prev = words[current];
-    prev.classList.remove('word-active');
-    prev.classList.add('word-exit');
-
-    setTimeout(() => prev.classList.remove('word-exit'), 500);
-
-    current = (current + 1) % words.length;
-    words[current].classList.add('word-active');
-  }
-
-  setInterval(cycle, 2200);
-})();
-
-// ══════════════════════════════════════════════════════════
-//  3. CONTAINER SCROLL — 3D Showcase
-// ══════════════════════════════════════════════════════════
-(function initContainerScroll() {
-  const outer  = document.getElementById('cs-outer');
-  const card   = document.getElementById('cs-card');
-  const header = document.getElementById('cs-header');
-  if (!outer || !card) return;
-
-  function update() {
-    const rect    = outer.getBoundingClientRect();
-    const outerH  = outer.offsetHeight;
-    const vh      = window.innerHeight;
-    const range   = outerH - vh;
-
-    if (range <= 0) return;
-
-    // progress: 0 when outer top hits viewport top → 1 when outer bottom hits viewport bottom
-    const raw      = -rect.top / range;
-    const progress = Math.max(0, Math.min(1, raw));
-
-    // rotateX: 20deg → 0deg
-    const rotX   = 20 * (1 - progress);
-    // scale: 1.05 → 1
-    const scl    = 1.05 - 0.05 * progress;
-    // header translateY: 0 → -80px
-    const transY = -80 * progress;
-
-    card.style.transform   = `rotateX(${rotX}deg) scale(${scl})`;
-    header.style.transform = `translateY(${transY}px)`;
-    header.style.opacity   = String(1 - progress * 0.4);
-  }
-
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update, { passive: true });
-  update();
-})();
-
 // ══════════════════════════════════════════════════════════
 //  MOBILE MENU
 // ══════════════════════════════════════════════════════════
@@ -1696,146 +1301,6 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 })();
 
 // ══════════════════════════════════════════════════════════
-//  MAGNETIC BUTTONS (subtle pull toward cursor)
-// ══════════════════════════════════════════════════════════
-(function initMagnetic() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.matchMedia('(hover: none)').matches) return;
-  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.25}px)`;
-    });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-  });
-})();
-
-/* Animated WebGL gradient hero background (vanilla port of "Velaris") */
-(function initHeroShader() {
-  const canvas = document.getElementById('hero-shader');
-  if (!canvas) return;
-  const gl = canvas.getContext('webgl');
-  if (!gl) { canvas.style.display = 'none'; return; }
-
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const vert = `
-    attribute vec2 position;
-    varying vec2 vUv;
-    void main(){ vUv = position * 0.5 + 0.5; gl_Position = vec4(position, 0.0, 1.0); }`;
-
-  const frag = `
-    precision highp float;
-    varying vec2 vUv;
-    uniform vec2  u_resolution;
-    uniform float u_time;
-    uniform float u_grain;
-    uniform vec3  u_colors[4];
-    uniform vec3  u_bg;
-    vec3 permute(vec3 x){ return mod(((x*34.0)+1.0)*x, 289.0); }
-    float snoise(vec2 v){
-      const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
-      vec2 i = floor(v + dot(v, C.yy));
-      vec2 x0 = v - i + dot(i, C.xx);
-      vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-      vec4 x12 = x0.xyxy + C.xxzz; x12.xy -= i1;
-      i = mod(i, 289.0);
-      vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
-      vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-      m = m*m; m = m*m;
-      vec3 x = 2.0 * fract(p * C.www) - 1.0;
-      vec3 h = abs(x) - 0.5;
-      vec3 ox = floor(x + 0.5);
-      vec3 a0 = x - ox;
-      m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
-      vec3 g;
-      g.x = a0.x * x0.x + h.x * x0.y;
-      g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-      return 130.0 * dot(m, g);
-    }
-    void main(){
-      vec2 uv = vUv;
-      float ratio = u_resolution.x / u_resolution.y;
-      vec2 p = uv - 0.5; p.x *= ratio;
-      float t = u_time * 0.1;
-      float n1 = snoise(p * 0.4 + vec2(t * 0.2, -t * 0.3));
-      float n2 = snoise(p * 0.55 + vec2(-t * 0.15, t * 0.25) + n1 * 0.25);
-      float n3 = snoise(p * 0.75 + vec2(t * 0.1, -t * 0.2) + n2 * 0.2);
-      vec3 col = u_bg;
-      float dist = length(p) * 1.5;
-      float vignette = 1.0 - smoothstep(0.3, 1.2, dist);
-      col = mix(col, u_colors[0], smoothstep(-0.2, 0.5, n1) * 0.85);
-      col = mix(col, u_colors[1], smoothstep(-0.1, 0.6, n2) * 0.7);
-      col = mix(col, u_colors[2], smoothstep(-0.3, 0.4, n3) * 0.6);
-      col = mix(col, u_colors[3], smoothstep(0.0, 0.7, n1 * n2) * 0.5);
-      float glow = smoothstep(0.8, 0.0, dist) * 0.3;
-      col += u_colors[1] * glow;
-      col = mix(col * 0.2, col, vignette);
-      float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453 + u_time);
-      col += (grain - 0.5) * u_grain * 0.1;
-      gl_FragColor = vec4(col, 1.0);
-    }`;
-
-  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
-  const prog = gl.createProgram();
-  gl.attachShader(prog, sh(gl.VERTEX_SHADER, vert));
-  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, frag));
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'position');
-  gl.enableVertexAttribArray(pos);
-  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-
-  const loc = {
-    res: gl.getUniformLocation(prog, 'u_resolution'),
-    time: gl.getUniformLocation(prog, 'u_time'),
-    grain: gl.getUniformLocation(prog, 'u_grain'),
-    colors: gl.getUniformLocation(prog, 'u_colors'),
-    bg: gl.getUniformLocation(prog, 'u_bg'),
-  };
-
-  const hex = (h) => { h = h.replace('#',''); return [parseInt(h.slice(0,2),16)/255, parseInt(h.slice(2,4),16)/255, parseInt(h.slice(4,6),16)/255]; };
-  // Black base + indigo / emerald to match the site palette
-  const palette = ['#93c5fd', '#3b82f6', '#1e3a8a', '#0a1730'];
-  const bg = hex('#0a1730');
-  const flat = new Float32Array(palette.flatMap(hex));
-  const speed = 1.4, grain = 0.25;
-
-  const resize = () => {
-    const dpr = Math.min(window.devicePixelRatio, 2);
-    canvas.width = canvas.clientWidth * dpr;
-    canvas.height = canvas.clientHeight * dpr;
-    gl.viewport(0, 0, canvas.width, canvas.height);
-  };
-  const ro = new ResizeObserver(resize); ro.observe(canvas); resize();
-
-  const draw = (tMs) => {
-    gl.uniform2f(loc.res, canvas.width, canvas.height);
-    gl.uniform1f(loc.time, tMs * 0.001 * speed);
-    gl.uniform1f(loc.grain, grain);
-    gl.uniform3f(loc.bg, bg[0], bg[1], bg[2]);
-    gl.uniform3fv(loc.colors, flat);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-  };
-
-  if (reduce) { draw(0); return; } // static single frame, no motion
-  let raf = 0, last = 0;
-  const loop = (t) => { last = t; draw(t); raf = requestAnimationFrame(loop); };
-  raf = requestAnimationFrame(loop);
-  // Pause when the tab is hidden to save GPU/battery
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
-    else if (!raf) { raf = requestAnimationFrame(loop); }
-  });
-})();
-
-// ══════════════════════════════════════════════════════════
 //  SCROLL PROGRESS BAR
 // ══════════════════════════════════════════════════════════
 (function initScrollProgress() {
@@ -1852,70 +1317,7 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 })();
 
 // ══════════════════════════════════════════════════════════
-//  GLOBAL CURSOR GLOW
-// ══════════════════════════════════════════════════════════
-(function initCursorGlow() {
-  const glow = document.getElementById('cursor-glow');
-  if (!glow || window.matchMedia('(pointer: coarse)').matches) return;
-  let x = window.innerWidth / 2, y = window.innerHeight / 2, tx = x, ty = y;
-  window.addEventListener('mousemove', (e) => {
-    tx = e.clientX; ty = e.clientY;
-    glow.style.opacity = '1';
-  });
-  window.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
-  (function follow() {
-    x += (tx - x) * 0.12; y += (ty - y) * 0.12;
-    glow.style.left = x + 'px'; glow.style.top = y + 'px';
-    requestAnimationFrame(follow);
-  })();
-})();
-
-// ══════════════════════════════════════════════════════════
-//  3D TILT ON PROJECT CARDS
-// ══════════════════════════════════════════════════════════
-(function initTilt() {
-  if (window.matchMedia('(pointer: coarse)').matches) return;
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach((card) => {
-    card.style.transformStyle = 'preserve-3d';
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(900px) rotateY(${px * 6}deg) rotateX(${-py * 6}deg) translateY(-4px)`;
-    });
-    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-  });
-})();
-
-// ══════════════════════════════════════════════════════════
-//  ANIMATED COUNTERS (stats)
-// ══════════════════════════════════════════════════════════
-(function initCounters() {
-  const counters = document.querySelectorAll('.counter');
-  if (!counters.length) return;
-  const run = (el) => {
-    const target = parseFloat(el.dataset.target) || 0;
-    const suffix = el.dataset.suffix || '';
-    const dur = 1600; const start = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) { run(en.target); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach((c) => io.observe(c));
-})();
-
-// ══════════════════════════════════════════════════════════
-//  SPACE STARFIELD (full-page, twinkling)
+//  STARFIELD
 // ══════════════════════════════════════════════════════════
 (function initStarfield() {
   const host = document.getElementById('starfield');
@@ -1945,77 +1347,34 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 })();
 
 // ══════════════════════════════════════════════════════════
-//  METEORS / SHOOTING STARS (hero + global background)
+//  METEORS (subtle, background only)
 // ══════════════════════════════════════════════════════════
 (function initMeteors() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const spawn = (host, count) => {
-    for (let i = 0; i < count; i++) {
-      const m = document.createElement('span');
-      m.className = 'meteor';
-      m.style.left = Math.random() * 100 + '%';
-      m.style.top = (Math.random() * 60) + '%';
-      m.style.animationDelay = (Math.random() * 10).toFixed(2) + 's';
-      m.style.animationDuration = (3 + Math.random() * 5).toFixed(2) + 's';
-      host.appendChild(m);
-    }
-  };
-  const hero = document.getElementById('meteors');
-  if (hero) spawn(hero, isMobile ? 6 : 12);
   const global = document.getElementById('space-meteors');
-  if (global) spawn(global, isMobile ? 4 : 8);
+  if (!global) return;
+  const count = isMobile ? 4 : 8;
+  for (let i = 0; i < count; i++) {
+    const m = document.createElement('span');
+    m.className = 'meteor';
+    m.style.left = Math.random() * 100 + '%';
+    m.style.top = (Math.random() * 60) + '%';
+    m.style.animationDelay = (Math.random() * 10).toFixed(2) + 's';
+    m.style.animationDuration = (3 + Math.random() * 5).toFixed(2) + 's';
+    global.appendChild(m);
+  }
 })();
 
 // ══════════════════════════════════════════════════════════
-//  MARQUEE — duplicate items for a seamless loop
+//  MARQUEE — duplicate items for seamless loop
 // ══════════════════════════════════════════════════════════
 (function initMarquee() {
   const track = document.getElementById('tech-marquee');
   if (!track) return;
-  track.innerHTML += track.innerHTML; // duplicate so -50% wraps seamlessly
+  track.innerHTML += track.innerHTML;
 })();
 
-// ══════════════════════════════════════════════════════════
-//  TEXT BLUR-IN REVEAL (section headings)
-// ══════════════════════════════════════════════════════════
-(function initBlurReveal() {
-  const heads = document.querySelectorAll('main section > div h2, #skills h2, #contact h2');
-  if (!heads.length) return;
-  heads.forEach((h) => h.classList.add('blur-reveal'));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) { en.target.classList.add('revealed'); io.unobserve(en.target); }
-    });
-  }, { threshold: 0.3 });
-  heads.forEach((h) => io.observe(h));
-})();
-
-// ══════════════════════════════════════════════════════════
-//  SCROLL-VELOCITY SKEW (subtle, rAF-throttled)
-// ══════════════════════════════════════════════════════════
-(function initScrollSkew() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768) return; // skip on mobile/touch
-  const main = document.querySelector('main');
-  if (!main) return;
-  let lastY = window.scrollY, current = 0, target = 0, ticking = false;
-  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-  const render = () => {
-    current += (target - current) * 0.1;
-    main.style.transform = `skewY(${current.toFixed(3)}deg)`;
-    if (Math.abs(target - current) > 0.01) { requestAnimationFrame(render); }
-    else { ticking = false; main.style.transform = ''; }
-  };
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    const v = y - lastY; lastY = y;
-    target = clamp(v * 0.03, -1.2, 1.2);
-    if (!ticking) { ticking = true; requestAnimationFrame(render); }
-  }, { passive: true });
-  // ease target back to 0 when scrolling stops
-  setInterval(() => { target *= 0.8; if (Math.abs(target) < 0.01) target = 0; }, 100);
-})();
 </script>
 
 <!-- Cookie Consent Banner -->
