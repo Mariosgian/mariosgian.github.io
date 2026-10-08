@@ -300,21 +300,46 @@
   .reveal-item.revealed { opacity: 1; transform: none; }
 
   /* ══════════════════════════════════════
-     CURSOR SPOTLIGHT ON CARDS
+     SPOTLIGHT GLOW CARDS
   ══════════════════════════════════════ */
   .glass-card { position: relative; }
+  /* Inner fill glow */
   .glass-card::after {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, -20%), rgba(59, 130, 246, 0.14), transparent 45%);
+    background: radial-gradient(
+      300px circle at var(--mx, 50%) var(--my, -20%),
+      rgba(59, 130, 246, 0.12), transparent 50%
+    );
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
     z-index: 0;
   }
   .glass-card:hover::after { opacity: 1; }
+  /* Border glow */
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(
+      400px circle at var(--mx, 50%) var(--my, -20%),
+      rgba(59, 130, 246, 0.5), transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+  .glass-card:hover::before { opacity: 1; }
   .glass-card > * { position: relative; z-index: 1; }
 
   /* ══════════════════════════════════════
@@ -373,23 +398,23 @@
     height: 100%;
     pointer-events: none;
     z-index: 0;
+    opacity: 0.7;
+    transform: translateZ(0);
   }
   .bg-paths-svg path {
-    stroke: rgba(255, 255, 255, 0.06);
-    stroke-width: 0.8;
     fill: none;
     stroke-linecap: round;
   }
-  @keyframes path-draw {
-    0%   { stroke-dashoffset: 1000; opacity: 0; }
-    15%  { opacity: 0.3; }
-    50%  { opacity: 0.15; }
-    100% { stroke-dashoffset: 0; opacity: 0; }
+  @keyframes path-flow {
+    0%   { opacity: 0; }
+    8%   { opacity: var(--peak, 0.4); }
+    45%  { opacity: var(--peak, 0.4); }
+    85%  { opacity: 0.05; }
+    100% { opacity: 0; }
   }
   .bg-paths-svg .path-line {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: path-draw var(--dur, 12s) ease-in-out var(--delay, 0s) infinite;
+    will-change: opacity;
+    animation: path-flow var(--dur, 14s) ease-in-out var(--delay, 0s) infinite;
   }
 
   /* ══════════════════════════════════════
@@ -552,16 +577,28 @@
 
     <!-- Background Paths SVG -->
     <svg class="bg-paths-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="path-line" style="--dur:14s;--delay:0s" d="M-50,700 Q200,680 400,620 T800,500 T1200,450 T1500,350"/>
-      <path class="path-line" style="--dur:16s;--delay:1s" d="M-50,750 Q250,720 500,650 T900,520 T1300,400 T1550,300"/>
-      <path class="path-line" style="--dur:12s;--delay:2s" d="M-50,800 Q300,760 550,680 T950,550 T1350,420 T1550,280"/>
-      <path class="path-line" style="--dur:18s;--delay:0.5s" d="M-50,650 Q150,640 350,590 T750,480 T1150,430 T1500,380"/>
-      <path class="path-line" style="--dur:15s;--delay:3s" d="M-50,850 Q350,800 600,710 T1000,570 T1400,440 T1550,250"/>
-      <path class="path-line" style="--dur:13s;--delay:1.5s" d="M-50,720 Q220,700 450,640 T850,510 T1250,440 T1520,330"/>
-      <path class="path-line" style="--dur:17s;--delay:2.5s" d="M-50,780 Q280,750 530,670 T930,540 T1330,410 T1540,260"/>
-      <path class="path-line" style="--dur:11s;--delay:0.8s" d="M-50,680 Q180,665 380,610 T780,490 T1180,440 T1510,360"/>
-      <path class="path-line" style="--dur:19s;--delay:3.5s" d="M-50,870 Q380,830 650,730 T1050,580 T1420,450 T1560,220"/>
-      <path class="path-line" style="--dur:14s;--delay:1.8s" d="M-50,740 Q240,715 470,650 T870,515 T1270,430 T1530,310"/>
+      <!-- Layer 1: Wide sweeping curves -->
+      <path class="path-line" stroke="rgba(59,130,246,0.15)" stroke-width="0.8" style="--dur:20s;--delay:0s;--peak:0.3" d="M-100,850 C200,800 400,600 720,500 S1100,350 1540,200"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.12)" stroke-width="0.6" style="--dur:24s;--delay:2s;--peak:0.25" d="M-50,900 C300,820 550,580 800,450 S1150,300 1540,150"/>
+      <path class="path-line" stroke="rgba(59,130,246,0.1)" stroke-width="1.2" style="--dur:18s;--delay:1s;--peak:0.2" d="M-80,800 C150,750 380,620 680,520 S1050,380 1540,260"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.08)" stroke-width="0.5" style="--dur:22s;--delay:3s;--peak:0.35" d="M-60,870 C250,790 480,560 760,430 S1120,280 1540,120"/>
+      <!-- Layer 2: Mid curves -->
+      <path class="path-line" stroke="rgba(59,130,246,0.12)" stroke-width="0.7" style="--dur:16s;--delay:0.5s;--peak:0.3" d="M-50,750 C180,710 420,580 700,480 S1060,370 1500,280"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.1)" stroke-width="1.0" style="--dur:19s;--delay:2.5s;--peak:0.25" d="M-70,780 C220,730 460,600 740,490 S1080,350 1520,230"/>
+      <path class="path-line" stroke="rgba(59,130,246,0.14)" stroke-width="0.6" style="--dur:21s;--delay:1.5s;--peak:0.3" d="M-40,820 C280,760 510,570 780,440 S1130,310 1540,170"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.09)" stroke-width="0.8" style="--dur:17s;--delay:3.5s;--peak:0.2" d="M-90,840 C200,780 440,610 720,510 S1070,390 1510,250"/>
+      <!-- Layer 3: Tighter curves with more curvature -->
+      <path class="path-line" stroke="rgba(59,130,246,0.11)" stroke-width="0.9" style="--dur:15s;--delay:0.8s;--peak:0.35" d="M-50,700 C100,690 300,620 550,520 C800,420 1000,380 1200,340 S1400,280 1540,220"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.13)" stroke-width="0.5" style="--dur:23s;--delay:4s;--peak:0.25" d="M-60,860 C320,800 560,550 820,420 C1080,290 1300,230 1540,100"/>
+      <path class="path-line" stroke="rgba(59,130,246,0.08)" stroke-width="1.1" style="--dur:14s;--delay:1.2s;--peak:0.2" d="M-40,730 C160,700 370,600 620,500 C870,400 1060,360 1260,320 S1440,260 1540,200"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.15)" stroke-width="0.4" style="--dur:25s;--delay:0.3s;--peak:0.3" d="M-80,880 C350,810 580,540 840,400 C1100,260 1320,200 1540,80"/>
+      <!-- Layer 4: Subtle fill lines -->
+      <path class="path-line" stroke="rgba(59,130,246,0.06)" stroke-width="1.4" style="--dur:26s;--delay:5s;--peak:0.15" d="M-50,770 C200,740 430,610 700,500 S1050,370 1500,250"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.07)" stroke-width="0.7" style="--dur:20s;--delay:2.8s;--peak:0.2" d="M-70,810 C260,760 490,590 750,460 S1100,330 1530,190"/>
+      <path class="path-line" stroke="rgba(59,130,246,0.05)" stroke-width="1.0" style="--dur:28s;--delay:6s;--peak:0.15" d="M-40,890 C300,830 540,580 800,440 S1140,300 1540,140"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.09)" stroke-width="0.6" style="--dur:16s;--delay:4.5s;--peak:0.25" d="M-60,720 C140,700 350,610 600,510 C850,410 1040,370 1240,330 S1420,270 1540,210"/>
+      <path class="path-line" stroke="rgba(59,130,246,0.1)" stroke-width="0.8" style="--dur:22s;--delay:1.8s;--peak:0.2" d="M-50,760 C190,730 410,600 680,490 S1040,360 1510,240"/>
+      <path class="path-line" stroke="rgba(56,189,248,0.06)" stroke-width="1.2" style="--dur:19s;--delay:3.2s;--peak:0.15" d="M-80,830 C240,770 470,580 730,450 S1090,320 1530,180"/>
     </svg>
 
     <!-- Background blobs -->
