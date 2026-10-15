@@ -951,9 +951,9 @@
         <div class="text-center mb-12">
           <span class="inline-block font-mono text-xs font-bold tracking-widest text-primary uppercase mb-4">How I Can Help</span>
           <h2 class="text-3xl md:text-4xl font-bold mb-3">
-            <span class="gradient-text">Two things I do well</span>
+            <span class="gradient-text">What I do best</span>
           </h2>
-          <p class="text-stone-400 max-w-xl mx-auto">Whether you need a website that wins clients or an engineer who ships clean, efficient code &mdash; I've got you.</p>
+          <p class="text-stone-400 max-w-xl mx-auto">From pixel-perfect websites to systems-level code and security-aware engineering &mdash; I've got you covered.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
@@ -969,12 +969,12 @@
                 <h3 class="text-xl font-bold text-white">Websites that convert</h3>
               </div>
             </div>
-            <p class="text-stone-400 mb-6 leading-relaxed">Fast, modern, mobile-first sites built to turn visitors into customers &mdash; and make your brand look established.</p>
+            <p class="text-stone-400 mb-6 leading-relaxed">I design and develop fast, modern websites from scratch &mdash; fully responsive, SEO-ready and built to convert visitors into customers.</p>
             <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Business &amp; landing page websites</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Multilingual &amp; SEO-ready builds</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Responsive on every device</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Fast load times &amp; clean UX</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Full-stack web development &amp; design</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Multilingual &amp; SEO-optimized builds</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Responsive &amp; mobile-first UI/UX</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Fast load times &amp; clean architecture</li>
             </ul>
             <a href="#contact" class="text-primary hover:text-accent font-medium inline-flex items-center gap-2 transition">
               Start a project <i class="fas fa-arrow-right text-sm"></i>
@@ -992,12 +992,12 @@
                 <h3 class="text-xl font-bold text-white">Software that performs</h3>
               </div>
             </div>
-            <p class="text-stone-400 mb-6 leading-relaxed">A CS student who cares about correctness, performance and clean architecture &mdash; ready to contribute as an intern or junior engineer.</p>
+            <p class="text-stone-400 mb-6 leading-relaxed">Strong foundation in C/C++, Python and more &mdash; with a growing focus on cybersecurity. Ready to contribute as an intern or junior engineer.</p>
             <ul class="space-y-3 mb-8">
               <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> C / C++ systems &amp; algorithms</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Data structures &amp; optimization</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Object-oriented design</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Clean, documented, tested code</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Python, JavaScript &amp; more</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Cybersecurity fundamentals &amp; secure coding</li>
+              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Data structures, OOP &amp; clean architecture</li>
             </ul>
             <a href="#personal-projects" class="text-accent hover:text-primary font-medium inline-flex items-center gap-2 transition">
               See my code <i class="fas fa-arrow-right text-sm"></i>
@@ -1123,7 +1123,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-24 animate-fade-up">
+  <section id="contact" class="pt-24 pb-40 animate-fade-up">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold mb-2">
@@ -1274,22 +1274,30 @@ window.addEventListener('scroll', () => {
 
   const sections = document.querySelectorAll('section[id]');
   const scrollY  = window.scrollY + 100;
+  const atBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
 
+  let activeId = null;
   sections.forEach(section => {
     const top = section.offsetTop;
     const id  = section.getAttribute('id');
     if (scrollY >= top && scrollY < top + section.offsetHeight) {
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
-      });
-      // Projects button (no href) — underline while in either projects section
-      const projectsBtn = document.getElementById('projects-button');
-      if (projectsBtn && (id === 'client-projects' || id === 'personal-projects')) {
-        projectsBtn.classList.add('active');
-      }
+      activeId = id;
     }
   });
+
+  if (atBottom) activeId = 'contact';
+
+  if (activeId) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${activeId}`) link.classList.add('active');
+    });
+    // Projects button (no href) — underline while in either projects section
+    const projectsBtn = document.getElementById('projects-button');
+    if (projectsBtn && (activeId === 'client-projects' || activeId === 'personal-projects')) {
+      projectsBtn.classList.add('active');
+    }
+  }
 });
 
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
