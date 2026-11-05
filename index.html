@@ -1,1475 +1,502 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGG289GFKG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGG289GFKG');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RGG289GFKG');</script>
 
-<title>Marios Giannoulis · Web Developer</title>
-
-<meta name="description" content="Marios Konstantinos Giannoulis — 20-year-old software developer and Computer Science student focused on algorithms, performance optimization and modern web development. Available for freelance projects and tech roles.">
-<meta name="keywords" content="Marios Giannoulis, Web Developer, Software Engineer, C++, Algorithms, Freelance Web Developer, Portfolio, Hire">
-<meta name="author" content="Marios Konstantinos Giannoulis">
-
+<title>Marios Giannoulis</title>
+<meta name="description" content="Marios Giannoulis — Computer Science student at the University of Athens. C/C++, Python, JavaScript. Building software and websites.">
+<meta name="author" content="Marios Giannoulis">
 <link rel="canonical" href="https://mariosgian.com/">
-<meta name="theme-color" content="#0a1730">
+<meta name="theme-color" content="#0a0a0a">
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Marios Konstantinos Giannoulis",
-  "alternateName": "Marios Giannoulis",
-  "url": "https://mariosgian.com/",
-  "image": "https://mariosgian.com/images/preview.jpg",
-  "jobTitle": "Web Developer & Software Engineer",
-  "description": "20-year-old software developer and Computer Science student focused on algorithms, performance optimization and modern web development. Available for freelance projects and tech roles.",
-  "knowsAbout": ["Web Development", "C++", "C", "Algorithms", "Performance Optimization", "Software Engineering", "JavaScript", "Front-End Development"],
-  "sameAs": [
-    "https://github.com/Mariosgian",
-    "https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289",
-    "https://www.behance.net/mariosgian"
-  ]
-}
+{"@context":"https://schema.org","@type":"Person","name":"Marios Giannoulis","url":"https://mariosgian.com/","image":"https://mariosgian.com/images/preview.jpg","jobTitle":"Software Developer","sameAs":["https://github.com/Mariosgian","https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289","https://www.instagram.com/giannoulis.m"]}
 </script>
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mariosgian.com/">
-<meta property="og:title" content="Marios Giannoulis | Web Developer & Software Engineer for Hire">
-<meta property="og:description" content="20-year-old software developer and Computer Science student focused on algorithms, performance optimization and modern web development. Available for freelance projects and tech roles.">
+<meta property="og:title" content="Marios Giannoulis">
+<meta property="og:description" content="Computer Science student at the University of Athens. C/C++, Python, JavaScript.">
 <meta property="og:image" content="https://mariosgian.com/images/preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://mariosgian.com/">
-<meta name="twitter:title" content="Marios Giannoulis | Web Developer & Software Engineer">
-<meta name="twitter:description" content="20-year-old software developer & Computer Science student focused on algorithms, performance and modern web development. Available for hire.">
-<meta name="twitter:image" content="https://mariosgian.com/images/preview.jpg">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="alternate icon" href="/favicon.svg">
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          dark: {
-            900: '#0a1730',
-            800: '#0f2244',
-            700: '#1a3057',
-            600: '#2a4470',
-          },
-          primary: '#3b82f6',
-          accent: '#38bdf8',
-        },
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif'],
-          mono: ['JetBrains Mono', 'monospace'],
-        },
-      }
-    }
-  }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 #0f2244;
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111;
+    --border: #222;
+    --text: #e5e5e5;
+    --muted: #a3a3a3;
+    --accent: #6ee7b7;
+    --link: #93c5fd;
   }
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #0d0d10; }
-  ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #7dd3fc; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .cursor-glow {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+    background: radial-gradient(circle 250px at var(--mx, -500px) var(--my, -500px), rgba(110,231,183,0.12), transparent 70%);
+    transition: background 0.15s;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; }
 
-  .glass {
-    background: rgba(18, 18, 22, 0.7);
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,10,10,0.85);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  nav .logo { font-weight: 700; color: var(--text); font-size: 16px; text-decoration: none; }
+  nav .links { display: flex; gap: 24px; }
+  nav .links a {
+    color: var(--muted); font-size: 15px; font-weight: 500; text-decoration: none;
+    padding-bottom: 2px; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  nav .links a:hover { color: var(--text); }
+  nav .links a.active { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 100px 0 60px; }
+  .hero h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+  .hero .subtitle { color: var(--muted); font-size: 17px; line-height: 1.7; margin-bottom: 24px; }
+  .hero .links-row { display: flex; gap: 20px; flex-wrap: wrap; }
+  .hero .links-row a { color: var(--muted); font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .hero .links-row a:hover { color: var(--text); text-decoration: none; }
+
+  /* Sections */
+  section { padding: 60px 0; scroll-margin-top: 80px; }
+  section h2 {
+    font-size: 15px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent); margin-bottom: 32px;
+  }
+  section > p.section-intro {
+    color: var(--muted); font-size: 16px; line-height: 1.7;
+    margin-top: -20px; margin-bottom: 32px;
   }
 
-  .glass-card {
-    background: rgba(18, 18, 22, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+  /* Project cards */
+  .project { padding: 24px 0; border-bottom: 1px solid var(--border); }
+  .project:last-child { border-bottom: none; }
+  .project-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .project h3 { font-size: 17px; font-weight: 600; }
+  .project h3 a { color: var(--text); }
+  .project h3 a:hover { color: var(--link); }
+  .project .tech { font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .project p { color: var(--muted); font-size: 15px; margin-top: 6px; line-height: 1.6; }
+  .project .links-row { margin-top: 8px; display: flex; gap: 16px; }
+  .project .links-row a { font-size: 14px; }
+
+  /* Education */
+  .edu-item h3 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+  .edu-item .dept { color: var(--muted); font-size: 15px; }
+  .edu-item .year { color: var(--accent); font-size: 13px; font-weight: 500; margin-top: 4px; }
+  .edu-item p { color: var(--muted); font-size: 15px; margin-top: 12px; line-height: 1.7; }
+
+  /* Skills */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill {
+    font-size: 14px; font-weight: 500; padding: 7px 15px;
+    border-radius: 6px; border: 1px solid var(--border);
+    color: var(--muted); background: var(--surface);
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, #7dd3fc 0%, #e0f2fe 50%, #7dd3fc 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 6s ease-in-out infinite;
+  /* Contact form */
+  .contact-form { display: flex; flex-direction: column; gap: 12px; max-width: 480px; }
+  .contact-form input,
+  .contact-form textarea {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: 10px 14px; color: var(--text); font-family: inherit; font-size: 15px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--accent); }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: #777; }
+  .contact-form textarea { resize: vertical; min-height: 100px; }
+  .contact-form button {
+    background: var(--accent); color: #0a0a0a; border: none; border-radius: 6px;
+    padding: 10px 20px; font-family: inherit; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.2s; align-self: flex-start;
+  }
+  .contact-form button:hover { opacity: 0.85; }
+  .contact-cards {
+    margin-top: 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+  }
+  .contact-card {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    padding: 20px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--muted); text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
+  .contact-card span { font-size: 13px; font-weight: 500; }
+  @media (max-width: 600px) {
+    .contact-cards { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 400px) {
+    .contact-cards { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% center; }
-    50%      { background-position: 100% center; }
-  }
+  /* Footer */
+  footer { border-top: 1px solid var(--border); padding: 16px 0; text-align: center; }
+  footer p { color: var(--muted); font-size: 12px; }
 
-  .gradient-border {
-    position: relative;
+  /* Cookie banner */
+  .cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 14px 24px; display: flex; align-items: center; justify-content: center;
+    gap: 16px; flex-wrap: wrap;
   }
+  .cookie-banner p { color: var(--muted); font-size: 13px; margin: 0; }
+  .cookie-banner button {
+    background: var(--accent); color: #0a0a0a; border: none; border-radius: 4px;
+    padding: 6px 16px; font-size: 13px; font-weight: 600; cursor: pointer;
+    font-family: inherit;
+  }
+  .cookie-banner button.decline {
+    background: transparent; color: var(--muted); border: 1px solid var(--border);
+  }
+  .cookie-banner.hidden { display: none; }
 
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, #3b82f6, #38bdf8);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+  /* Mobile nav */
+  .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 20px; cursor: pointer; padding: 4px; }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .hero .subtitle { font-size: 15px; }
+    nav .links { display: none; }
+    nav .links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 16px 24px; gap: 16px; }
+    .mobile-toggle { display: block; }
+    .project-header { flex-direction: column; gap: 4px; }
   }
-
-  .animate-fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .animate-fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .nav-link { position: relative; }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #3b82f6, #38bdf8);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-
-  .nav-link:hover::after,
-  .nav-link.active::after { width: 100%; }
-
-  .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-  }
-
-  .skill-tag { transition: all 0.3s ease; }
-
-  .skill-tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-  }
-
-  .btn-secondary {
-    border: 1px solid rgba(59, 130, 246, 0.5);
-    transition: all 0.3s ease;
-  }
-
-  .btn-secondary:hover {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: #3b82f6;
-    transform: translateY(-2px);
-  }
-
-  .hero-gradient {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent);
-  }
-
-  #back-to-top {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  }
-
-  #back-to-top.visible { opacity: 1; visibility: visible; }
-  #back-to-top:hover { transform: translateY(-4px); }
-
-  .social-link { transition: all 0.3s ease; }
-
-  .social-link:hover {
-    color: #3b82f6;
-    transform: translateX(4px);
-  }
-
-
-  /* ══════════════════════════════════════
-     AVAILABILITY BADGE
-  ══════════════════════════════════════ */
-  .avail-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #38bdf8;
-    position: relative;
-    flex-shrink: 0;
-  }
-  .avail-dot::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: #38bdf8;
-    animation: availPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-  @keyframes availPing {
-    0%   { transform: scale(1);   opacity: 0.7; }
-    80%, 100% { transform: scale(2.6); opacity: 0; }
-  }
-
-  /* Card lift for service/process/track cards */
-  .lift { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-  .lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    border-color: rgba(59, 130, 246, 0.35);
-  }
-
-  .badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    padding: 2px 10px;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .badge-live { background: rgba(20,184,166,0.12); color: #2dd4bf; border: 1px solid rgba(20,184,166,0.3); }
-  .badge-concept { background: rgba(234,179,8,0.10); color: #3b82f6; border: 1px solid rgba(234,179,8,0.3); }
-
-  /* ══════════════════════════════════════
-     NAV SHRINK ON SCROLL
-  ══════════════════════════════════════ */
-  #site-header.scrolled {
-    background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
-    border-bottom: 1px solid rgba(59, 130, 246, 0.12);
-  }
-  #header-inner { transition: padding 0.3s ease; }
-  #site-header.scrolled #header-inner { padding-top: 0.55rem; padding-bottom: 0.55rem; }
-
-  /* ══════════════════════════════════════
-     STAGGERED SCROLL REVEAL
-  ══════════════════════════════════════ */
-  .reveal-item {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-    will-change: opacity, transform;
-  }
-  .reveal-item.revealed { opacity: 1; transform: none; }
-
-  /* ══════════════════════════════════════
-     SPOTLIGHT GLOW CARDS
-  ══════════════════════════════════════ */
-  .glass-card { position: relative; }
-  /* Inner fill glow */
-  .glass-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      300px circle at var(--mx, 50%) var(--my, -20%),
-      rgba(59, 130, 246, 0.12), transparent 50%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .glass-card:hover::after { opacity: 1; }
-  /* Border glow */
-  .glass-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      400px circle at var(--mx, 50%) var(--my, -20%),
-      rgba(59, 130, 246, 0.5), transparent 50%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-    z-index: -1;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    padding: 1px;
-  }
-  .glass-card:hover::before { opacity: 1; }
-  .glass-card > * { position: relative; z-index: 1; }
-
-  /* ══════════════════════════════════════
-     FLOATING (scroll arrow)
-  ══════════════════════════════════════ */
-  .floating { animation: floating 3s ease-in-out infinite; }
-  @keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* ══════════════════════════════════════
-     BUTTON SHIMMER
-  ══════════════════════════════════════ */
-  .shimmer { position: relative; overflow: hidden; }
-  .shimmer::after {
-    content: '';
-    position: absolute; top: 0; left: -150%;
-    width: 60%; height: 100%;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.25), transparent);
-    transform: skewX(-20deg);
-    animation: shimmer-sweep 3.5s ease-in-out infinite;
-    pointer-events: none;
-  }
-  @keyframes shimmer-sweep { 0% { left: -150%; } 55%, 100% { left: 150%; } }
-
-  /* ══════════════════════════════════════
-     SCROLL PROGRESS BAR
-  ══════════════════════════════════════ */
-  #scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0;
-    background: linear-gradient(90deg, #3b82f6, #38bdf8);
-    z-index: 60;
-    transition: width 0.1s linear;
-  }
-
-  /* ══════════════════════════════════════
-     MARQUEE (infinite tech strip)
-  ══════════════════════════════════════ */
-  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-  .marquee-track { display: flex; width: max-content; gap: 1rem; animation: marquee-scroll 28s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  @keyframes marquee-scroll { to { transform: translateX(-50%); } }
-
-  /* ══════════════════════════════════════
-     BACKGROUND PATHS (hero SVG animation)
-  ══════════════════════════════════════ */
-  .bg-paths-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.7;
-    transform: translateZ(0);
-  }
-  .bg-paths-svg path {
-    fill: none;
-    stroke-linecap: round;
-  }
-  @keyframes path-flow {
-    0%   { opacity: 0; }
-    8%   { opacity: var(--peak, 0.4); }
-    45%  { opacity: var(--peak, 0.4); }
-    85%  { opacity: 0.05; }
-    100% { opacity: 0; }
-  }
-  .bg-paths-svg .path-line {
-    will-change: opacity;
-    animation: path-flow var(--dur, 14s) ease-in-out var(--delay, 0s) infinite;
-  }
-
-  /* ══════════════════════════════════════
-     STARFIELD
-  ══════════════════════════════════════ */
-  #starfield {
-    position: fixed; inset: 0;
-    z-index: -11;
-    pointer-events: none;
-    overflow: hidden;
-    background:
-      radial-gradient(ellipse at 20% 15%, rgba(59,130,246,0.10), transparent 45%),
-      radial-gradient(ellipse at 80% 60%, rgba(99,102,241,0.08), transparent 50%),
-      #0a1730;
-  }
-  .star {
-    position: absolute;
-    border-radius: 9999px;
-    background: #fff;
-    animation: twinkle linear infinite;
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.15; }
-    50%      { opacity: 0.9; }
-  }
-
-  /* ══════════════════════════════════════
-     METEORS
-  ══════════════════════════════════════ */
-  #space-meteors { position: fixed; inset: 0; z-index: -10; pointer-events: none; overflow: hidden; }
-  .meteor {
-    position: absolute;
-    top: -10%;
-    width: 2px; height: 2px;
-    border-radius: 9999px;
-    background: #bfdbfe;
-    box-shadow: 0 0 6px 1px rgba(147,197,253,0.7);
-    transform: rotate(215deg);
-    animation: meteor-fall linear infinite;
-    opacity: 0;
-  }
-  .meteor::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 0;
-    width: 60px; height: 1px;
-    transform: translateY(-50%);
-    background: linear-gradient(90deg, rgba(147,197,253,0.7), transparent);
-  }
-  @keyframes meteor-fall {
-    0%   { opacity: 0; transform: rotate(215deg) translateX(0); }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { opacity: 0; transform: rotate(215deg) translateX(-800px); }
-  }
-
-  /* ══════════════════════════════════════
-     PULSE GLOW (back-to-top)
-  ══════════════════════════════════════ */
-  .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
-  @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.5); }
-  }
-
-  /* ══════════════════════════════════════
-     REDUCED MOTION — respect user preference
-  ══════════════════════════════════════ */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-      scroll-behavior: auto !important;
-    }
-    .floating, .pulse-glow, .avail-dot::after { animation: none !important; }
-    .meteor, .marquee-track { animation: none !important; }
-  }
-
-  html, body { overflow-x: hidden; }
 </style>
 </head>
-<body class="bg-dark-900 text-stone-200 font-sans antialiased">
+<body>
 
-<!-- Full-page starfield -->
-<div id="starfield" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
 
-<!-- Global drifting meteors -->
-<div id="space-meteors" aria-hidden="true"></div>
+<nav>
+  <div class="container inner">
+    <a href="#" class="logo">My Portfolio</a>
+    <button class="mobile-toggle" id="nav-toggle" aria-label="Menu">&#9776;</button>
+    <div class="links" id="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="cv/Marios-Giannoulis-CV.pdf">CV</a>
+    </div>
+  </div>
+</nav>
 
-<!-- Scroll progress bar -->
-<div id="scroll-progress"></div>
+<main class="container">
 
-<!-- Header -->
-<header id="site-header" class="fixed w-full z-50 glass transition-all duration-300">
-  <div class="container mx-auto px-6 py-4" id="header-inner">
-    <div class="flex justify-between items-center">
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Marios Konstantinos Giannoulis</h1>
+    <p style="color: var(--accent); font-size: 15px; font-weight: 500; margin-bottom: 14px; letter-spacing: 0.02em;">About Me</p>
+    <p class="subtitle">
+      Hey, I'm Marios — currently in my 3rd year studying Informatics and Telecommunications at UoA.
+      I write most of my code in C++ and Python, and I enjoy solving algorithmic problems
+      and building systems from scratch.
+    </p>
+    <p class="subtitle" style="margin-top: 0;">
+      Alongside my studies, I run <a href="https://pixelnodestudio.com" target="_blank" rel="noopener">Pixel Node Studio</a> —
+      a freelance web studio where I design, develop, and deliver complete websites for clients,
+      from initial concept to deployment.
+    </p>
+    <p class="subtitle" style="margin-top: 0;">
+      I work across the full stack, but I'm most at home turning ideas into clean, functional products.
+    </p>
+  </div>
 
-      <a href="#hero" class="flex items-center gap-2.5 group" aria-label="mariosgian.com — home">
-        <span class="text-lg font-bold text-white tracking-tight">My <span class="gradient-text font-bold">Portfolio</span></span>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/self-driving-car-simulation-cpp" target="_blank" rel="noopener">Self-Driving Car Simulation</a></h3>
+        <span class="tech mono">C++ · Simulation</span>
+      </div>
+      <p>Autonomous vehicle navigating a GridWorld using sensors, sensor fusion and GPS navigation logic.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/self-driving-car-simulation-cpp" target="_blank">GitHub &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/protein-synthesis-simulator" target="_blank" rel="noopener">Protein Synthesis Simulator</a></h3>
+        <span class="tech mono">C++ · OOP</span>
+      </div>
+      <p>Object-oriented simulation of protein synthesis in a eukaryotic cell — transcription, RNA transport, translation.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/protein-synthesis-simulator" target="_blank">GitHub &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/TSP-Algorithm" target="_blank" rel="noopener">Traveling Salesman Solver</a></h3>
+        <span class="tech mono">C++ · Algorithms</span>
+      </div>
+      <p>Heuristic algorithms for the Traveling Salesman Problem — comparing nearest-neighbor, greedy and 2-opt route optimization.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/TSP-Algorithm" target="_blank">GitHub &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/python-job-scraper" target="_blank" rel="noopener">Job Scraper</a></h3>
+        <span class="tech mono">Python · CLI</span>
+      </div>
+      <p>CLI tool that scrapes job listings using async httpx, filters by role/location/salary, exports to CSV/JSON. SQLite caching, Pydantic validation, Rich terminal UI.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/python-job-scraper" target="_blank">GitHub &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/js-finance-dashboard" target="_blank" rel="noopener">Finance Dashboard</a></h3>
+        <span class="tech mono">JavaScript · Canvas API</span>
+      </div>
+      <p>Personal finance tracker with interactive charts built on Canvas API — no libraries. Category breakdowns, CSV export, localStorage persistence. Zero dependencies.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/js-finance-dashboard" target="_blank">GitHub &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://mesosoros-dit.pages.dev" target="_blank" rel="noopener">GPA Calculator — UoA</a></h3>
+        <span class="tech mono">JavaScript · Web App</span>
+      </div>
+      <p>ECTS-weighted GPA calculator for UoA Informatics students. Full course catalog, dark/light mode, deployed on Cloudflare Pages.</p>
+      <div class="links-row">
+        <a href="https://mesosoros-dit.pages.dev" target="_blank">Live &rarr;</a>
+        <a href="https://github.com/Mariosgian/mesosoros-dit" target="_blank">GitHub &rarr;</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://github.com/Mariosgian/Factor" target="_blank" rel="noopener">Factorization Algorithm</a></h3>
+        <span class="tech mono">C · Number Theory</span>
+      </div>
+      <p>Efficient integer factorization using number theory techniques.</p>
+      <div class="links-row"><a href="https://github.com/Mariosgian/Factor" target="_blank">GitHub &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- Client Work -->
+  <section id="work">
+    <h2>Client Work</h2>
+    <p class="section-intro">Shipped through <a href="https://pixelnodestudio.com" target="_blank" rel="noopener">Pixel Node Studio</a>, my freelance web studio.</p>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://mikeoikonomou.surge.sh" target="_blank" rel="noopener">Mike Oikonomou — Photography & Videography</a></h3>
+        <span class="tech mono">HTML · CSS · JS</span>
+      </div>
+      <p>Portfolio site for a photographer and videographer. Visual-first design, optimized media loading.</p>
+      <div class="links-row"><a href="https://mikeoikonomou.surge.sh" target="_blank">Live &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank" rel="noopener">Zoi Lama — Law Firm</a></h3>
+        <span class="tech mono">HTML · CSS · JS</span>
+      </div>
+      <p>Trilingual law firm website (EN/GR/FR). Contact form, language switcher, SEO in 3 languages.</p>
+      <div class="links-row"><a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank">Live &rarr;</a></div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3><a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank" rel="noopener">Dr. Ioannis Giannoulis — Academic Portfolio</a></h3>
+        <span class="tech mono">HTML · CSS · JS</span>
+      </div>
+      <p>Academic portfolio for a university lecturer. Structured sections for publications and courses.</p>
+      <div class="links-row"><a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank">Live &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-item">
+      <h3><a href="https://www.di.uoa.gr/" target="_blank" rel="noopener" style="color: var(--text);">National and Kapodistrian University of Athens</a></h3>
+      <p class="dept">BSc in Informatics and Telecommunications — <a href="https://www.di.uoa.gr/" target="_blank" rel="noopener">DIT (Department of Informatics and Telecommunications)</a></p>
+      <p class="year">3rd Year Student</p>
+      <p>Studying the foundations of computing — from low-level systems programming and algorithm design to software architecture and applied mathematics. Strong focus on building real systems, not just passing exams.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technologies</h2>
+    <div class="skills-grid">
+      <span class="skill">C</span>
+      <span class="skill">C++</span>
+      <span class="skill">Python</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Java</span>
+      <span class="skill">SQL</span>
+      <span class="skill">HTML/CSS</span>
+      <span class="skill">React</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">Express</span>
+      <span class="skill">Tailwind</span>
+      <span class="skill">Bootstrap</span>
+      <span class="skill">Git</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">Linux</span>
+      <span class="skill">Bash</span>
+      <span class="skill">MySQL</span>
+      <span class="skill">MongoDB</span>
+      <span class="skill">REST APIs</span>
+      <span class="skill">Figma</span>
+      <span class="skill">Cloudflare</span>
+      <span class="skill">Netlify</span>
+    </div>
+    <div style="margin-top: 16px;">
+      <span style="color: var(--muted); font-size: 15px;">Greek (native) · English (C2) · French (B2)</span>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form class="contact-form" action="https://formsubmit.co/mariosgiannouliw@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Portfolio Contact">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://mariosgian.com/">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-cards">
+      <a href="mailto:mariosgiannouliw@gmail.com" class="contact-card">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M.05 3.555A2 2 0 012 2h12a2 2 0 011.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 002 14h12a2 2 0 001.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zM16 11.801V4.697l-5.803 3.546L16 11.801z"/></svg>
+        <span>Email</span>
       </a>
-
-      <nav class="hidden md:block">
-        <ul class="flex space-x-8 items-center">
-          <li>
-            <a href="#about" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">About</a>
-          </li>
-          <li>
-            <a href="#studies" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Studies</a>
-          </li>
-          <li class="relative">
-            <button id="projects-button" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium flex items-center gap-1">
-              Projects <i class="fas fa-chevron-down text-xs"></i>
-            </button>
-            <div id="projects-dropdown" class="absolute left-0 mt-3 w-48 glass rounded-xl shadow-lg hidden">
-              <a href="#client-projects" class="dropdown-link block px-4 py-3 text-sm text-stone-300 hover:text-white hover:bg-dark-800 transition rounded-t-xl">Client Projects</a>
-              <a href="#personal-projects" class="dropdown-link block px-4 py-3 text-sm text-stone-300 hover:text-white hover:bg-dark-800 transition rounded-b-xl">Personal Projects</a>
-            </div>
-          </li>
-          <li>
-            <a href="#services" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Services</a>
-          </li>
-          <li>
-            <a href="#skills" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Skills</a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-link text-stone-300 hover:text-white transition text-sm font-medium">Contact</a>
-          </li>
-        </ul>
-      </nav>
-
-      <button class="md:hidden focus:outline-none text-white" id="mobile-menu-button" aria-label="Toggle menu">
-        <i class="fas fa-bars text-xl"></i>
-      </button>
-
-    </div>
-  </div>
-
-  <div class="hidden md:hidden glass" id="mobile-menu">
-    <div class="container mx-auto px-6 py-4">
-      <ul class="space-y-4">
-        <li><a href="#about" class="block py-2 text-stone-300 hover:text-white transition">About</a></li>
-        <li><a href="#studies" class="block py-2 text-stone-300 hover:text-white transition">Studies</a></li>
-        <li><a href="#client-projects" class="block py-2 text-stone-300 hover:text-white transition">Client Projects</a></li>
-        <li><a href="#personal-projects" class="block py-2 text-stone-300 hover:text-white transition">Personal Projects</a></li>
-        <li><a href="#services" class="block py-2 text-stone-300 hover:text-white transition">Services</a></li>
-        <li><a href="#skills" class="block py-2 text-stone-300 hover:text-white transition">Skills</a></li>
-        <li><a href="#contact" class="block py-2 text-stone-300 hover:text-white transition">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <!-- ══════════════════════════════════════════
-       HERO — GooeyText + Rotating Words
-  ══════════════════════════════════════════ -->
-  <section id="hero" class="min-h-screen flex items-center justify-center relative hero-gradient overflow-hidden">
-
-    <!-- Background Paths SVG -->
-    <svg class="bg-paths-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <!-- Layer 1: Wide sweeping curves -->
-      <path class="path-line" stroke="rgba(59,130,246,0.15)" stroke-width="0.8" style="--dur:20s;--delay:0s;--peak:0.3" d="M-100,850 C200,800 400,600 720,500 S1100,350 1540,200"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.12)" stroke-width="0.6" style="--dur:24s;--delay:2s;--peak:0.25" d="M-50,900 C300,820 550,580 800,450 S1150,300 1540,150"/>
-      <path class="path-line" stroke="rgba(59,130,246,0.1)" stroke-width="1.2" style="--dur:18s;--delay:1s;--peak:0.2" d="M-80,800 C150,750 380,620 680,520 S1050,380 1540,260"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.08)" stroke-width="0.5" style="--dur:22s;--delay:3s;--peak:0.35" d="M-60,870 C250,790 480,560 760,430 S1120,280 1540,120"/>
-      <!-- Layer 2: Mid curves -->
-      <path class="path-line" stroke="rgba(59,130,246,0.12)" stroke-width="0.7" style="--dur:16s;--delay:0.5s;--peak:0.3" d="M-50,750 C180,710 420,580 700,480 S1060,370 1500,280"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.1)" stroke-width="1.0" style="--dur:19s;--delay:2.5s;--peak:0.25" d="M-70,780 C220,730 460,600 740,490 S1080,350 1520,230"/>
-      <path class="path-line" stroke="rgba(59,130,246,0.14)" stroke-width="0.6" style="--dur:21s;--delay:1.5s;--peak:0.3" d="M-40,820 C280,760 510,570 780,440 S1130,310 1540,170"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.09)" stroke-width="0.8" style="--dur:17s;--delay:3.5s;--peak:0.2" d="M-90,840 C200,780 440,610 720,510 S1070,390 1510,250"/>
-      <!-- Layer 3: Tighter curves with more curvature -->
-      <path class="path-line" stroke="rgba(59,130,246,0.11)" stroke-width="0.9" style="--dur:15s;--delay:0.8s;--peak:0.35" d="M-50,700 C100,690 300,620 550,520 C800,420 1000,380 1200,340 S1400,280 1540,220"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.13)" stroke-width="0.5" style="--dur:23s;--delay:4s;--peak:0.25" d="M-60,860 C320,800 560,550 820,420 C1080,290 1300,230 1540,100"/>
-      <path class="path-line" stroke="rgba(59,130,246,0.08)" stroke-width="1.1" style="--dur:14s;--delay:1.2s;--peak:0.2" d="M-40,730 C160,700 370,600 620,500 C870,400 1060,360 1260,320 S1440,260 1540,200"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.15)" stroke-width="0.4" style="--dur:25s;--delay:0.3s;--peak:0.3" d="M-80,880 C350,810 580,540 840,400 C1100,260 1320,200 1540,80"/>
-      <!-- Layer 4: Subtle fill lines -->
-      <path class="path-line" stroke="rgba(59,130,246,0.06)" stroke-width="1.4" style="--dur:26s;--delay:5s;--peak:0.15" d="M-50,770 C200,740 430,610 700,500 S1050,370 1500,250"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.07)" stroke-width="0.7" style="--dur:20s;--delay:2.8s;--peak:0.2" d="M-70,810 C260,760 490,590 750,460 S1100,330 1530,190"/>
-      <path class="path-line" stroke="rgba(59,130,246,0.05)" stroke-width="1.0" style="--dur:28s;--delay:6s;--peak:0.15" d="M-40,890 C300,830 540,580 800,440 S1140,300 1540,140"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.09)" stroke-width="0.6" style="--dur:16s;--delay:4.5s;--peak:0.25" d="M-60,720 C140,700 350,610 600,510 C850,410 1040,370 1240,330 S1420,270 1540,210"/>
-      <path class="path-line" stroke="rgba(59,130,246,0.1)" stroke-width="0.8" style="--dur:22s;--delay:1.8s;--peak:0.2" d="M-50,760 C190,730 410,600 680,490 S1040,360 1510,240"/>
-      <path class="path-line" stroke="rgba(56,189,248,0.06)" stroke-width="1.2" style="--dur:19s;--delay:3.2s;--peak:0.15" d="M-80,830 C240,770 470,580 730,450 S1090,320 1530,180"/>
-    </svg>
-
-    <!-- Background blobs -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <div class="animate-fade-up">
-
-        <!-- Availability badge -->
-        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full glass text-sm text-stone-200 hover:text-white transition">
-          <span class="avail-dot"></span>
-          Available for freelance projects &amp; tech roles
-        </a>
-
-        <!-- Name -->
-        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Marios Konstantinos<br>
-          <span class="gradient-text">Giannoulis</span>
-        </h1>
-
-        <p class="text-xl md:text-2xl text-stone-300 font-semibold mb-4">Web Developer &amp; Software Engineer</p>
-
-        <p class="text-lg md:text-xl text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Building clean, efficient software and modern web experiences.
-        </p>
-
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#client-projects" class="btn-primary shimmer px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center gap-2">
-            <i class="fas fa-code"></i> View Projects
-          </a>
-          <a href="cv/Marios-Giannoulis-CV.pdf" download="Marios-Giannoulis-CV.pdf" class="btn-secondary px-8 py-4 rounded-xl font-semibold text-stone-200 inline-flex items-center justify-center gap-2">
-            <i class="fas fa-download"></i> Download CV
-          </a>
-          <a href="#contact" class="btn-secondary px-8 py-4 rounded-xl font-semibold text-stone-200 inline-flex items-center justify-center gap-2">
-            <i class="fas fa-envelope"></i> Contact Me
-          </a>
-        </div>
-
-        <!-- Scroll arrow -->
-        <div class="mt-14 floating">
-          <a href="#about" class="text-stone-500 hover:text-primary transition inline-block" aria-label="Scroll to about">
-            <i class="fas fa-chevron-down text-2xl"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-24 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">About Me</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
-        <div class="glass-card rounded-2xl p-8 md:p-10">
-          <p class="text-lg text-stone-300 leading-relaxed mb-6">
-            I'm <span class="text-white font-semibold">Marios Konstantinos Giannoulis</span>, a 20-year-old software developer and Computer Science student focused on algorithms, performance optimization and modern web development. I care about writing clean, efficient code and turning complex problems into reliable, well-engineered solutions.
-          </p>
-          <p class="text-lg text-stone-300 leading-relaxed">
-            Alongside my degree, I design and build production websites for businesses and personal brands, and continuously sharpen my craft through algorithmic and software engineering projects. I'm currently available for freelance work and technical roles where I can contribute, learn and grow.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Studies Section -->
-  <section id="studies" class="py-24 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">My Studies</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
-        <div class="glass-card rounded-2xl p-8 md:p-10">
-          <div class="flex items-start gap-4 mb-6">
-            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-              <i class="fas fa-graduation-cap text-primary text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl font-semibold text-white mb-1">National and Kapodistrian University of Athens</h3>
-              <p class="text-stone-400">Department of Informatics and Telecommunications</p>
-            </div>
-          </div>
-          <p class="text-lg text-stone-300 leading-relaxed mb-6">
-            I'm pursuing my degree at the <a href="https://www.di.uoa.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent transition underline underline-offset-4">Department of Informatics and Telecommunications</a>, building a rigorous foundation in computer science — data structures, algorithms, operating systems and software design — with strong hands-on programming in C, C++ and Python.
-          </p>
-          <p class="text-lg text-stone-300 leading-relaxed">
-            My focus is on bridging theory with practice: applying performance engineering, efficient memory management and clean architecture to solve real-world problems. I complement my coursework with self-directed projects that push my skills beyond the curriculum.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Client Projects Section -->
-  <section id="client-projects" class="py-24">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">Client Projects</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-10"></div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/mikeoikonomoupreview.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Mike Oikonomou Photography & Videography">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-live"><i class="fas fa-circle text-[6px]"></i> Live client</span>
-                <span class="text-xs text-stone-500 font-mono">Photography</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Mike Oikonomou — Photography & Videography</h3>
-              <p class="text-stone-400 mb-4">Portfolio site for a photographer & videographer. Clean visual-first design that showcases the work with minimal distractions.</p>
-              <a href="https://mikeoikonomou.surge.sh" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-arrow-up-right-from-square"></i> View Live
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/zoilamalaw.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Zoi Lama Law Firm">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-live"><i class="fas fa-circle text-[6px]"></i> Live client</span>
-                <span class="text-xs text-stone-500 font-mono">Law Firm</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Zoi Lama — Law Firm Website</h3>
-              <p class="text-stone-400 mb-4">A professional trilingual law firm website (EN / GR / FR) designed for clarity, trust and international clients.</p>
-              <a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-arrow-up-right-from-square"></i> View Live
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/giannoulis.png" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Dr. Ioannis Giannoulis">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-live"><i class="fas fa-circle text-[6px]"></i> Live client</span>
-                <span class="text-xs text-stone-500 font-mono">Academic</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Dr. Ioannis Giannoulis — Academic Portfolio</h3>
-              <p class="text-stone-400 mb-4">Academic portfolio for a university lecturer, focused on clean structure and professional presentation.</p>
-              <a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-arrow-up-right-from-square"></i> View Live
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/barbermission.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Barber Mission">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
-                <span class="text-xs text-stone-500 font-mono">Barbershop</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Barber Mission — Business Website</h3>
-              <p class="text-stone-400 mb-4">A premium dark themed website for a modern barbershop brand, focused on strong visuals and minimal design.</p>
-              <a href="https://pixel-node-studio.github.io/barbermission.gr/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-arrow-up-right-from-square"></i> View Live
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image1.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Maria's Bakery">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
-                <span class="text-xs text-stone-500 font-mono">Bakery</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Maria's Bakery — Business Website</h3>
-              <p class="text-stone-400 mb-4">A cozy bakery concept website with warm visuals and elegant typography designed to feel welcoming and authentic.</p>
-              <a href="https://mariosgian.github.io/Bakery/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-arrow-up-right-from-square"></i> View Live
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image3.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Creative Digital Agency">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
-                <span class="text-xs text-stone-500 font-mono">Agency</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Creative Digital Agency — Landing Page</h3>
-              <p class="text-stone-400 mb-6">A modern agency landing page showcasing clean UI structure, responsive design and professional layout.</p>
-              <a href="https://mariosgian.github.io/Creative-Digital-Agency/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-                <i class="fas fa-globe"></i> Live Demo
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/image2.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover" alt="Fit With Alex">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
-                <span class="text-xs text-stone-500 font-mono">Fitness</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-3">Fit With Alex — Personal Trainer Website</h3>
-              <p class="text-stone-400 mb-6">A sleek one-page personal trainer website focused on modern design, service presentation and smooth UX.</p>
-              <a href="https://mariosgian.github.io/Personal-Trainer/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-                <i class="fas fa-globe"></i> Live Demo
-              </a>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl overflow-hidden project-card">
-            <img src="images/nexora.jpg" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover object-top" alt="Nexora AI Landing Page">
-            <div class="p-6">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="badge badge-concept"><i class="fas fa-circle text-[6px]"></i> Concept</span>
-                <span class="text-xs text-stone-500 font-mono">AI SaaS</span>
-              </div>
-              <h3 class="text-xl font-bold text-white mb-2">Nexora — AI Infrastructure Landing Page</h3>
-              <p class="text-stone-400 mb-4">A futuristic glassmorphism landing page for an AI SaaS platform. Particle animations, custom cursor, live metrics UI and full pricing section.</p>
-              <a href="https://mariosgian.github.io/nexoralanding/" target="_blank" rel="noopener" class="text-primary hover:text-accent font-medium flex items-center gap-2">
-                <i class="fas fa-globe"></i> Live Demo
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Personal Projects Section -->
-  <section id="personal-projects" class="py-24 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">Personal Projects</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-10"></div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-car text-primary"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">C++ • Simulation</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Self-Driving Car Simulation</h3>
-            <p class="text-stone-400 mb-6">A C++ simulation of an autonomous vehicle navigating a GridWorld using sensors, sensor fusion and GPS navigation logic.</p>
-            <a href="https://github.com/Mariosgian/self-driving-car-simulation-cpp" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                <i class="fas fa-dna text-accent"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">C++ • OOP</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Protein Synthesis Simulator</h3>
-            <p class="text-stone-400 mb-6">An object-oriented C++ simulation of protein synthesis in a eukaryotic cell, modeling transcription, RNA transport and translation into proteins.</p>
-            <a href="https://github.com/Mariosgian/protein-synthesis-simulator" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-route text-primary"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">C++ • Algorithms</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Traveling Salesman Solver</h3>
-            <p class="text-stone-400 mb-6">A C++ implementation of heuristic algorithms solving the Traveling Salesman Problem and comparing route optimization strategies.</p>
-            <a href="https://github.com/Mariosgian/TSP-Algorithm" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                <i class="fas fa-calculator text-accent"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">C • Algorithms</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Factorization Algorithm</h3>
-            <p class="text-stone-400 mb-6">A C implementation that factorizes large integers efficiently using number theory techniques.</p>
-            <a href="https://github.com/Mariosgian/Factor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-chart-pie text-primary"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">JavaScript • Web App</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Finance Dashboard</h3>
-            <p class="text-stone-400 mb-6">A personal finance tracker for recording income and expenses, with interactive charts built on the Canvas API — no libraries. Features category breakdowns, dark/light mode, CSV export and localStorage persistence. Zero dependencies.</p>
-            <a href="https://github.com/Mariosgian/js-finance-dashboard" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                <i class="fas fa-briefcase text-accent"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">Python • CLI Tool</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Job Scraper</h3>
-            <p class="text-stone-400 mb-6">A Python CLI tool that scrapes job and internship listings from multiple sources using async httpx requests, filters by role, location and salary, and exports to CSV/JSON. Uses SQLite caching, Pydantic validation and a Rich terminal UI.</p>
-            <a href="https://github.com/Mariosgian/python-job-scraper" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-              <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 project-card gradient-border">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-graduation-cap text-primary"></i>
-              </div>
-              <span class="text-xs font-mono text-stone-500">JavaScript • Web App</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">GPA Calculator — University of Athens</h3>
-            <p class="text-stone-400 mb-6">An ECTS-weighted GPA calculator for University of Athens Informatics students — the full course catalog by semester, computing only passed courses. No backend; data stays on-device via localStorage. Deployed on Cloudflare Pages with a responsive dark/light UI. <span class="text-stone-500 italic">The interface is in Greek, tailored to its target student audience.</span></p>
-            <div class="flex flex-wrap items-center gap-5">
-              <a href="https://mesosoros-dit.pages.dev" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary hover:text-accent transition font-medium">
-                <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right text-sm"></i>
-              </a>
-              <a href="https://github.com/Mariosgian/mesosoros-dit" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-stone-400 hover:text-white transition font-medium">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What I Do — Dual Track -->
-  <section id="services" class="py-24 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-
-        <div class="text-center mb-12">
-          <span class="inline-block font-mono text-xs font-bold tracking-widest text-primary uppercase mb-4">How I Can Help</span>
-          <h2 class="text-3xl md:text-4xl font-bold mb-3">
-            <span class="gradient-text">What I do best</span>
-          </h2>
-          <p class="text-stone-400 max-w-xl mx-auto">From pixel-perfect websites to systems-level code and security-aware engineering &mdash; I've got you covered.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-
-          <!-- Track 1: For Businesses -->
-          <div class="glass-card rounded-2xl p-8 lift">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-globe text-primary text-xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-mono text-primary uppercase tracking-wider">For Businesses</span>
-                <h3 class="text-xl font-bold text-white">Websites that convert</h3>
-              </div>
-            </div>
-            <p class="text-stone-400 mb-6 leading-relaxed">I design and develop fast, modern websites from scratch &mdash; fully responsive, SEO-ready and built to convert visitors into customers.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Full-stack web development &amp; design</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Multilingual &amp; SEO-optimized builds</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Responsive &amp; mobile-first UI/UX</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Fast load times &amp; clean architecture</li>
-            </ul>
-            <a href="#contact" class="text-primary hover:text-accent font-medium inline-flex items-center gap-2 transition">
-              Start a project <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-          <!-- Track 2: For Engineering Teams -->
-          <div class="glass-card rounded-2xl p-8 lift">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                <i class="fas fa-microchip text-accent text-xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-mono text-accent uppercase tracking-wider">For Engineering Teams</span>
-                <h3 class="text-xl font-bold text-white">Software that performs</h3>
-              </div>
-            </div>
-            <p class="text-stone-400 mb-6 leading-relaxed">Strong foundation in C/C++, Python and more &mdash; with a growing focus on cybersecurity. Ready to contribute as an intern or junior engineer.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> C / C++ systems &amp; algorithms</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Python, JavaScript &amp; more</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Cybersecurity fundamentals &amp; secure coding</li>
-              <li class="flex items-center gap-3 text-stone-300"><i class="fas fa-check text-accent text-sm"></i> Data structures, OOP &amp; clean architecture</li>
-            </ul>
-            <a href="#personal-projects" class="text-accent hover:text-primary font-medium inline-flex items-center gap-2 transition">
-              See my code <i class="fas fa-arrow-right text-sm"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="py-24 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">My Skills</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
-
-        <div class="glass-card rounded-2xl p-8 md:p-10">
-
-          <div class="mb-8">
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Programming Languages</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-primary"></i> C++</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-js text-primary"></i> JavaScript</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-python text-primary"></i> Python</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-java text-primary"></i> Java</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-html5 text-primary"></i> HTML5</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-database text-primary"></i> SQL</span>
-            </div>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Computer Science</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-project-diagram text-primary"></i> Data Structures</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-brain text-primary"></i> Algorithms</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-cubes text-primary"></i> Object-Oriented Programming</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-network-wired text-primary"></i> System Design Fundamentals</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-memory text-primary"></i> Memory Management</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-sitemap text-primary"></i> Operating Systems</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-stone-200 flex items-center gap-2"><i class="fas fa-bug text-primary"></i> Debugging</span>
-            </div>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Web Development</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-html5 text-accent"></i> HTML5</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3-alt text-accent"></i> CSS3</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-css3 text-accent"></i> Tailwind CSS</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-js text-accent"></i> JavaScript (ES6+)</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-react text-accent"></i> React</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fab fa-node-js text-accent"></i> Node.js</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-mobile-alt text-accent"></i> Responsive Design</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-universal-access text-accent"></i> Accessibility</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-search text-accent"></i> SEO Basics</span>
-            </div>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Tools & Technologies</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-git-alt text-stone-400"></i> Git</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-github text-stone-400"></i> GitHub</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-terminal text-stone-400"></i> Linux / CLI</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-code text-stone-400"></i> VS Code</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-figma text-stone-400"></i> Figma</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-database text-stone-400"></i> MySQL</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fab fa-npm text-stone-400"></i> npm</span>
-            </div>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Professional Skills</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-lightbulb text-stone-400"></i> Problem Solving</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-brain text-stone-400"></i> Analytical Thinking</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-comments text-stone-400"></i> Communication</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-users text-stone-400"></i> Team Collaboration</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-clock text-stone-400"></i> Time Management</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-sync-alt text-stone-400"></i> Adaptability</span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 text-stone-200 flex items-center gap-2"><i class="fas fa-book-open text-stone-400"></i> Fast Learner</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">Languages</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> Greek <span class="text-xs text-stone-500">&mdash; Native</span></span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> English <span class="text-xs text-stone-500">&mdash; Fluent</span></span>
-              <span class="skill-tag px-4 py-2 rounded-lg bg-accent/10 border border-accent/20 text-stone-200 flex items-center gap-2"><i class="fas fa-language text-accent"></i> French <span class="text-xs text-stone-500">&mdash; Fluent</span></span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Tech marquee strip -->
-        <div class="marquee mt-8 py-4">
-          <div class="marquee-track" id="tech-marquee">
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-code text-primary"></i> C++</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-js text-primary"></i> JavaScript</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-react text-primary"></i> React</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-python text-primary"></i> Python</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-node-js text-primary"></i> Node.js</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-html5 text-primary"></i> HTML5</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fas fa-database text-primary"></i> SQL</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-git-alt text-primary"></i> Git</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-figma text-primary"></i> Figma</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-java text-primary"></i> Java</span>
-            <span class="text-stone-400 text-lg font-medium flex items-center gap-2 px-4"><i class="fab fa-css3 text-primary"></i> Tailwind</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="pt-24 pb-40 animate-fade-up">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">
-          <span class="gradient-text">Let's Connect</span>
-        </h2>
-        <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded mb-8"></div>
-        <div class="glass-card rounded-2xl p-8 md:p-10">
-          <p class="text-stone-400 mb-8">Have a project or role in mind? Let's talk &mdash; I usually reply within a day.</p>
-          <div class="grid sm:grid-cols-2 gap-6">
-            <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 shrink-0 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                <i class="fab fa-linkedin text-blue-400 text-xl"></i>
-              </div>
-              <div class="min-w-0">
-                <p class="text-sm text-stone-500">LinkedIn</p>
-                <p class="text-white font-medium break-words">Marios Giannoulis</p>
-              </div>
-            </a>
-            <a href="https://github.com/Mariosgian" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 shrink-0 rounded-lg bg-stone-500/20 flex items-center justify-center">
-                <i class="fab fa-github text-stone-300 text-xl"></i>
-              </div>
-              <div class="min-w-0">
-                <p class="text-sm text-stone-500">GitHub</p>
-                <p class="text-white font-medium break-words">@Mariosgian</p>
-              </div>
-            </a>
-            <a href="mailto:mariosgiannouliw@gmail.com" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 shrink-0 rounded-lg bg-primary/20 flex items-center justify-center">
-                <i class="fas fa-envelope text-primary text-xl"></i>
-              </div>
-              <div class="min-w-0">
-                <p class="text-sm text-stone-500">Email</p>
-                <p class="text-white font-medium text-sm sm:text-base break-all">mariosgiannouliw@gmail.com</p>
-              </div>
-            </a>
-            <a href="https://www.behance.net/mariosgian" target="_blank" rel="noopener" class="social-link flex items-center gap-4 p-4 rounded-xl bg-dark-800/50 hover:bg-dark-700/50 transition">
-              <div class="w-12 h-12 shrink-0 rounded-lg bg-sky-500/20 flex items-center justify-center">
-                <i class="fab fa-behance text-sky-400 text-xl"></i>
-              </div>
-              <div class="min-w-0">
-                <p class="text-sm text-stone-500">Behance</p>
-                <p class="text-white font-medium break-words">@mariosgian</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+      <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="contact-card">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/Mariosgian" target="_blank" rel="noopener" class="contact-card">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.instagram.com/giannoulis.m" target="_blank" rel="noopener" class="contact-card">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 00-1.417.923A3.927 3.927 0 00.42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 001.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 00-.923-1.417A3.911 3.911 0 0013.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 01-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 01-.92-.598 2.48 2.48 0 01-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 100 1.92.96.96 0 000-1.92zm-4.27 1.122a4.109 4.109 0 100 8.217 4.109 4.109 0 000-8.217zm0 1.441a2.667 2.667 0 110 5.334 2.667 2.667 0 010-5.334z"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="cv/Marios-Giannoulis-CV.pdf" download class="contact-card">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 01.5.5v2.5a1 1 0 001 1h12a1 1 0 001-1v-2.5a.5.5 0 011 0v2.5a2 2 0 01-2 2H2a2 2 0 01-2-2v-2.5a.5.5 0 01.5-.5z"/><path d="M7.646 11.854a.5.5 0 00.708 0l3-3a.5.5 0 00-.708-.708L8.5 10.293V1.5a.5.5 0 00-1 0v8.793L5.354 8.146a.5.5 0 10-.708.708l3 3z"/></svg>
+        <span>Download CV</span>
+      </a>
     </div>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="border-t border-dark-700 py-10">
-  <div class="container mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-center md:text-left">
-        <a href="#hero" class="text-lg font-bold gradient-text">Marios Giannoulis</a>
-        <p class="text-stone-500 text-sm mt-1">Web Developer &amp; Software Engineer · Athens, Greece</p>
-      </div>
-      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
-        <a href="#services" class="text-stone-400 hover:text-white transition">Services</a>
-        <a href="#client-projects" class="text-stone-400 hover:text-white transition">Work</a>
-        <a href="#skills" class="text-stone-400 hover:text-white transition">Skills</a>
-        <a href="#contact" class="text-stone-400 hover:text-white transition">Contact</a>
-        <a href="https://www.behance.net/mariosgian" target="_blank" rel="noopener" class="text-stone-400 hover:text-white transition">Behance</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/Mariosgian" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition" aria-label="GitHub"><i class="fab fa-github text-lg"></i></a>
-        <a href="https://www.linkedin.com/in/marios-konstantinos-giannoulis-129576289" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition" aria-label="LinkedIn"><i class="fab fa-linkedin text-lg"></i></a>
-        <a href="https://www.behance.net/mariosgian" target="_blank" rel="noopener" class="text-stone-400 hover:text-primary transition" aria-label="Behance"><i class="fab fa-behance text-lg"></i></a>
-      </div>
-    </div>
-    <p class="text-stone-600 text-xs text-center mt-8">© 2026 Marios Konstantinos Giannoulis · Built with HTML, Tailwind &amp; JavaScript</p>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Marios Konstantinos Giannoulis</p>
   </div>
 </footer>
 
-<!-- Back to Top -->
-<button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-xl bg-primary text-white shadow-lg flex items-center justify-center pulse-glow z-50" aria-label="Back to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-<script>
-// ══════════════════════════════════════════════════════════
-//  MOBILE MENU
-// ══════════════════════════════════════════════════════════
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu       = document.getElementById('mobile-menu');
-
-mobileMenuButton.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-  const icon = mobileMenuButton.querySelector('i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times');
-});
-
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    const icon = mobileMenuButton.querySelector('i');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-times');
-  });
-});
-
-// Projects dropdown
-const projectsButton   = document.getElementById('projects-button');
-const projectsDropdown = document.getElementById('projects-dropdown');
-
-projectsButton.addEventListener('click', () => {
-  projectsDropdown.classList.toggle('hidden');
-});
-
-document.querySelectorAll('.dropdown-link').forEach(link => {
-  link.addEventListener('click', () => projectsDropdown.classList.add('hidden'));
-});
-
-document.addEventListener('click', (e) => {
-  if (!projectsButton.contains(e.target) && !projectsDropdown.contains(e.target)) {
-    projectsDropdown.classList.add('hidden');
-  }
-});
-
-// ══════════════════════════════════════════════════════════
-//  SCROLL ANIMATIONS (IntersectionObserver)
-// ══════════════════════════════════════════════════════════
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.animate-fade-up').forEach(el => io.observe(el));
-
-// Trigger hero fade-up immediately
-document.querySelectorAll('#hero .animate-fade-up').forEach(el => {
-  setTimeout(() => el.classList.add('visible'), 100);
-});
-
-// ══════════════════════════════════════════════════════════
-//  BACK TO TOP + ACTIVE NAV
-// ══════════════════════════════════════════════════════════
-const backToTop = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-  backToTop.classList.toggle('visible', window.scrollY > 500);
-
-  const sections = document.querySelectorAll('section[id]');
-  const scrollY  = window.scrollY + 100;
-  const atBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
-
-  let activeId = null;
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const id  = section.getAttribute('id');
-    if (scrollY >= top && scrollY < top + section.offsetHeight) {
-      activeId = id;
-    }
-  });
-
-  if (atBottom) activeId = 'contact';
-
-  if (activeId) {
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${activeId}`) link.classList.add('active');
-    });
-    // Projects button (no href) — underline while in either projects section
-    const projectsBtn = document.getElementById('projects-button');
-    if (projectsBtn && (activeId === 'client-projects' || activeId === 'personal-projects')) {
-      projectsBtn.classList.add('active');
-    }
-  }
-});
-
-backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// ══════════════════════════════════════════════════════════
-//  NAV SHRINK ON SCROLL
-// ══════════════════════════════════════════════════════════
-(function initHeaderShrink() {
-  const header = document.getElementById('site-header');
-  if (!header) return;
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-
-// ══════════════════════════════════════════════════════════
-//  STAGGERED SCROLL REVEAL (cards cascade in)
-// ══════════════════════════════════════════════════════════
-(function initReveal() {
-  const cards = document.querySelectorAll('.glass-card, .project-card');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  cards.forEach(el => {
-    el.classList.add('reveal-item');
-    const idx = Array.prototype.indexOf.call(el.parentElement.children, el);
-    el.style.transitionDelay = (Math.min(idx, 6) * 70) + 'ms';
-    io.observe(el);
-  });
-})();
-
-// ══════════════════════════════════════════════════════════
-//  CURSOR SPOTLIGHT ON CARDS
-// ══════════════════════════════════════════════════════════
-(function initSpotlight() {
-  document.querySelectorAll('.glass-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
-})();
-
-// ══════════════════════════════════════════════════════════
-//  SCROLL PROGRESS BAR
-// ══════════════════════════════════════════════════════════
-(function initScrollProgress() {
-  const bar = document.getElementById('scroll-progress');
-  if (!bar) return;
-  const update = () => {
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
-    bar.style.width = pct + '%';
-  };
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-
-// ══════════════════════════════════════════════════════════
-//  STARFIELD
-// ══════════════════════════════════════════════════════════
-(function initStarfield() {
-  const host = document.getElementById('starfield');
-  if (!host) return;
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const COUNT = isMobile ? 60 : 130;
-  const frag = document.createDocumentFragment();
-  for (let i = 0; i < COUNT; i++) {
-    const s = document.createElement('span');
-    s.className = 'star';
-    const size = (Math.random() * 2 + 0.6).toFixed(2);
-    s.style.width = size + 'px';
-    s.style.height = size + 'px';
-    s.style.left = (Math.random() * 100).toFixed(2) + '%';
-    s.style.top = (Math.random() * 100).toFixed(2) + '%';
-    s.style.opacity = (Math.random() * 0.6 + 0.15).toFixed(2);
-    if (!reduce) {
-      s.style.animationDuration = (2 + Math.random() * 4).toFixed(2) + 's';
-      s.style.animationDelay = (Math.random() * 5).toFixed(2) + 's';
-    } else {
-      s.style.animation = 'none';
-    }
-    frag.appendChild(s);
-  }
-  host.appendChild(frag);
-})();
-
-// ══════════════════════════════════════════════════════════
-//  METEORS (subtle, background only)
-// ══════════════════════════════════════════════════════════
-(function initMeteors() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const global = document.getElementById('space-meteors');
-  if (!global) return;
-  const count = isMobile ? 4 : 8;
-  for (let i = 0; i < count; i++) {
-    const m = document.createElement('span');
-    m.className = 'meteor';
-    m.style.left = Math.random() * 100 + '%';
-    m.style.top = (Math.random() * 60) + '%';
-    m.style.animationDelay = (Math.random() * 10).toFixed(2) + 's';
-    m.style.animationDuration = (3 + Math.random() * 5).toFixed(2) + 's';
-    global.appendChild(m);
-  }
-})();
-
-// ══════════════════════════════════════════════════════════
-//  MARQUEE — duplicate items for seamless loop
-// ══════════════════════════════════════════════════════════
-(function initMarquee() {
-  const track = document.getElementById('tech-marquee');
-  if (!track) return;
-  track.innerHTML += track.innerHTML;
-})();
-
-</script>
-
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] transition-transform duration-500 translate-y-full">
-  <div class="mx-3 mb-3 sm:mx-4 sm:mb-4 md:mx-8 md:mb-6 glass rounded-2xl p-5 sm:p-6 md:p-8 border border-dark-700 shadow-2xl max-w-3xl md:ml-auto md:mr-8">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <div class="flex-1 min-w-0">
-        <p class="text-white font-semibold text-sm mb-1"><i class="fas fa-cookie-bite text-primary mr-2"></i>Cookie Notice</p>
-        <p class="text-stone-400 text-xs leading-relaxed">This site uses cookies to enhance your browsing experience and analyze traffic. By clicking "Accept", you consent to the use of cookies.</p>
-      </div>
-      <div class="flex gap-3 shrink-0 w-full sm:w-auto">
-        <button id="cookie-decline" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-sm font-medium text-stone-400 hover:text-white border border-dark-600 hover:border-dark-500 active:scale-95 transition">Decline</button>
-        <button id="cookie-accept" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-sm font-medium text-white bg-primary hover:bg-blue-600 active:scale-95 transition shadow-lg shadow-primary/20">Accept</button>
-      </div>
-    </div>
-  </div>
+<div class="cookie-banner" id="cookie-banner">
+  <p>This site uses cookies for analytics.</p>
+  <button onclick="acceptCookies()">Accept</button>
+  <button class="decline" onclick="declineCookies()">Decline</button>
 </div>
 
 <script>
-(function initCookieBanner() {
-  const banner  = document.getElementById('cookie-banner');
-  const acceptBtn  = document.getElementById('cookie-accept');
-  const declineBtn = document.getElementById('cookie-decline');
-  if (!banner || localStorage.getItem('cookie-consent')) return;
+// Cookie consent
+(function() {
+  var consent = null;
+  try { consent = localStorage.getItem('cookie-consent'); } catch(e) {}
+  if (consent === 'accepted' || consent === 'declined') {
+    document.getElementById('cookie-banner').classList.add('hidden');
+    if (consent === 'declined') {
+      window['ga-disable-G-RGG289GFKG'] = true;
+    }
+  }
+})();
+function acceptCookies() {
+  try { localStorage.setItem('cookie-consent', 'accepted'); } catch(e) {}
+  document.getElementById('cookie-banner').classList.add('hidden');
+}
+function declineCookies() {
+  window['ga-disable-G-RGG289GFKG'] = true;
+  try { localStorage.setItem('cookie-consent', 'declined'); } catch(e) {}
+  document.getElementById('cookie-banner').classList.add('hidden');
+}
 
-  setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000);
+// Cursor glow
+document.addEventListener('mousemove', function(e) {
+  document.getElementById('cursor-glow').style.setProperty('--mx', e.clientX + 'px');
+  document.getElementById('cursor-glow').style.setProperty('--my', e.clientY + 'px');
+});
 
-  function dismiss(value) {
-    localStorage.setItem('cookie-consent', value);
-    banner.classList.add('translate-y-full');
-    setTimeout(() => { banner.remove(); }, 500);
+document.getElementById('nav-toggle').addEventListener('click', function() {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('nav-links').classList.remove('open');
+  });
+});
+
+// Active nav highlighting on scroll
+(function() {
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('#nav-links a[href^="#"]');
+
+  function onScroll() {
+    var scrollY = window.scrollY + 100;
+    var current = '';
+
+    // If scrolled to bottom, activate the last section
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      current = sections[sections.length - 1].getAttribute('id');
+    } else {
+      sections.forEach(function(section) {
+        if (scrollY >= section.offsetTop) {
+          current = section.getAttribute('id');
+        }
+      });
+    }
+
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
   }
 
-  acceptBtn.addEventListener('click', () => dismiss('accepted'));
-  declineBtn.addEventListener('click', () => dismiss('declined'));
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 })();
 </script>
 
