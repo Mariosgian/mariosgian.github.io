@@ -78,7 +78,7 @@
   nav .links a.active { color: var(--text); border-bottom-color: var(--accent); }
 
   /* Hero */
-  .hero { padding: 100px 0 60px; }
+  .hero { padding: 80px 0 40px; }
   .hero h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
   .hero .subtitle { color: var(--muted); font-size: 17px; line-height: 1.7; margin-bottom: 24px; }
   .hero .links-row { display: flex; gap: 20px; flex-wrap: wrap; }
@@ -86,7 +86,7 @@
   .hero .links-row a:hover { color: var(--text); text-decoration: none; }
 
   /* Sections */
-  section { padding: 60px 0; scroll-margin-top: 80px; }
+  section { padding: 40px 0; scroll-margin-top: 80px; }
   section h2 {
     font-size: 15px; font-weight: 600; text-transform: uppercase;
     letter-spacing: 0.1em; color: var(--accent); margin-bottom: 32px;
@@ -141,8 +141,15 @@
     cursor: pointer; transition: opacity 0.2s; align-self: flex-start;
   }
   .contact-form button:hover { opacity: 0.85; }
+  /* Client work thumbnails */
+  .project-thumb {
+    width: 100%; border-radius: 8px; margin-top: 12px;
+    border: 1px solid var(--border); display: block;
+    object-fit: cover; max-height: 320px;
+  }
+
   .contact-cards {
-    margin-top: 24px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+    margin-top: 24px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
   }
   .contact-card {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
@@ -152,7 +159,7 @@
   }
   .contact-card:hover { border-color: var(--accent); color: var(--text); text-decoration: none; }
   .contact-card span { font-size: 13px; font-weight: 500; }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .contact-cards { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 400px) {
@@ -315,6 +322,7 @@
         <span class="tech mono">HTML · CSS · JS</span>
       </div>
       <p>Portfolio site for a photographer and videographer. Visual-first design, optimized media loading.</p>
+      <a href="https://mikeoikonomou.surge.sh" target="_blank" rel="noopener"><img src="images/mikeoikonomoupreview.jpg" alt="Mike Oikonomou website preview" class="project-thumb" loading="lazy"></a>
       <div class="links-row"><a href="https://mikeoikonomou.surge.sh" target="_blank">Live &rarr;</a></div>
     </div>
 
@@ -324,6 +332,7 @@
         <span class="tech mono">HTML · CSS · JS</span>
       </div>
       <p>Trilingual law firm website (EN/GR/FR). Contact form, language switcher, SEO in 3 languages.</p>
+      <a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank" rel="noopener"><img src="images/zoilamalaw.jpg" alt="Zoi Lama law firm website preview" class="project-thumb" loading="lazy"></a>
       <div class="links-row"><a href="https://pixel-node-studio.github.io/zoilama.gr/" target="_blank">Live &rarr;</a></div>
     </div>
 
@@ -333,6 +342,7 @@
         <span class="tech mono">HTML · CSS · JS</span>
       </div>
       <p>Academic portfolio for a university lecturer. Structured sections for publications and courses.</p>
+      <a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank" rel="noopener"><img src="images/giannoulis.png" alt="Dr. Giannoulis academic portfolio preview" class="project-thumb" loading="lazy"></a>
       <div class="links-row"><a href="https://pixel-node-studio.github.io/drgiannoulis.gr/" target="_blank">Live &rarr;</a></div>
     </div>
   </section>
