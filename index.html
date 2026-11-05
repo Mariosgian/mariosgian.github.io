@@ -393,10 +393,9 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <form class="contact-form" action="https://formsubmit.co/mariosgiannouliw@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Portfolio Contact">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://mariosgian.com/">
+    <form id="contact-form" class="contact-form">
+      <input type="hidden" name="access_key" value="8e37e804-9f5e-4db5-b9e1-d5b1c30a20e9">
+      <input type="hidden" name="subject" value="Portfolio Contact — mariosgian.com">
       <input type="text" name="name" placeholder="Name" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Message" required></textarea>
@@ -511,6 +510,37 @@ document.querySelectorAll('#nav-links a').forEach(function(a) {
 
   window.addEventListener('scroll', onScroll);
   onScroll();
+})();
+
+// Contact form (Web3Forms)
+(function() {
+  var form = document.getElementById('contact-form');
+  var btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    var data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.success) {
+          btn.textContent = 'Sent!';
+          btn.style.opacity = '0.7';
+          form.reset();
+          setTimeout(function() { btn.textContent = 'Send Message'; btn.disabled = false; btn.style.opacity = ''; }, 3000);
+        } else {
+          btn.textContent = 'Error — try again';
+          btn.disabled = false;
+          setTimeout(function() { btn.textContent = 'Send Message'; }, 3000);
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Error — try again';
+        btn.disabled = false;
+        setTimeout(function() { btn.textContent = 'Send Message'; }, 3000);
+      });
+  });
 })();
 </script>
 
